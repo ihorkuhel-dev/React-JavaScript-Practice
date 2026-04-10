@@ -1,13 +1,11 @@
-import { createRoot } from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
 import './styles/global.scss'
 
-const App = () => {
-    return (
-        <div>
-            <h1>React 19</h1>
-        </div>
-    )
-}
-
-const root = createRoot(document.getElementById('root'))
-root.render(<App/>)
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+);
