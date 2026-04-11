@@ -1,6 +1,10 @@
 module.exports = {
+    sourceType: 'unambiguous',
     presets: [
-        '@babel/preset-env',
-        ['@babel/preset-react', { runtime: 'automatic' }],
+        ['@babel/preset-env', {
+            targets: "defaults",
+            modules: false
+        }],
+        ['@babel/preset-react', { runtime: 'automatic' }]
     ]
 }
