@@ -21,7 +21,7 @@ export default function Input(props) {
 
     return (
         <>
-            <div className={`input-wrapper ${type}-wrapper`}>
+            <div className={`input-wrapper ${type}-wrapper ${error && 'error-wrapper'}`}>
                 <input
                     type={inputType}
                     id={id}
@@ -30,8 +30,7 @@ export default function Input(props) {
                     value={value}
                     onChange={onChange}
                     autoComplete={autoComplete}
-                    className={value ? 'has-value' : ''}
-
+                    className={value ? 'has-value' : '' }
                 />
                 <label htmlFor={id}>{label}</label>
                 {type === 'password' && (

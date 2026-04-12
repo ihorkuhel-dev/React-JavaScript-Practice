@@ -15,17 +15,16 @@
 
     --green: #45B73B;
     --blue: #263ED4;
-    --red: #C63031;
+    --red: rgb(198, 48, 49);
 
     --button-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 25%);
     --circle-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
     --aside-nav-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
     --input-box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     --submit-button-box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    --error-box-shadow: 0 4px 12px rgba(198, 48, 49, 0.3);
 
-    --font-size--stats-graph: 16px;
     --font-size--text: 16px;
-
     --font-size--p: 20px;
     --font-size--sub-categories: 22px;
     --font-size--categories: 24px;

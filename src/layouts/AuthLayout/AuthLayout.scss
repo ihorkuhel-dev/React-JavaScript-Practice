@@ -27,8 +27,19 @@
 
     }
     & p{
-      font-size: var(--font-size--stats-graph);
+      font-size: var(--font-size--text);
       color: var(--text-color--light);
     }
+  }
+
+  form {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .form-group {
+    position: relative;
   }
 }

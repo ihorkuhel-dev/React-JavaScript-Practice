@@ -1,6 +1,7 @@
 import {useState} from "react";
 import Input from "../../../../shared/api/ui/Input/Input";
 import Button from "../../../../shared/api/ui/Button/Button";
+import {rules, validateField} from "../../../../shared/utils/validators";
 
 export default function RegisterForm (props) {
 
@@ -8,9 +9,24 @@ export default function RegisterForm (props) {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const [userNameError, setUserNameError] = useState(null);
-    const [passwordError, setPasswordError] = useState(null);
+    const [userNameError, setUserNameError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
     const [confirmPasswordError, setConfirmPasswordError] = useState('');
+
+    const validateFields = () => {
+        const uNameError = validateField(userName,
+            [rules.required, rules.username]);
+        const passError = validateField(password,
+            [rules.required, rules.minLength(8)]);
+        const confPassError = validateField(confirmPassword,
+                [rules.required, rules.match(password), rules.minLength(8)]);
+
+        setUserNameError(uNameError || '');
+        setPasswordError(passError || '');
+        setConfirmPasswordError(confPassError || '')
+
+        return !uNameError && !passError && !confPassError;
+    }
 
 
     const handleLoginChange = (e) => {
@@ -25,12 +41,13 @@ export default function RegisterForm (props) {
 
     const handleConfirmPasswordChange = (e) => {
         setConfirmPassword(e.target.value);
-        if (passwordError) setConfirmPasswordError('');
+        if (confirmPasswordError) setConfirmPasswordError('');
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Данные готовы к отправке:', { username: userName, password });
+        if(validateFields())
+            console.log('Данные готовы к отправке:', { username: userName, password });
     }
     return (
         <form onSubmit={handleSubmit}>
@@ -71,7 +88,7 @@ export default function RegisterForm (props) {
                 />
             </div>
             <div className="form-group">
-                <Button type="submit">Login</Button>
+                <Button type="submit">Register</Button>
             </div>
         </form>
     )

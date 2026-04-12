@@ -10,9 +10,9 @@ export default function Register() {
                 <p>Fill out form for registration</p>
             </div>
             <RegisterForm/>
-            <p>Уже есть аккаунт?
+            <p>Already have an account?
                 <Link to="/login">
-                    Войти
+                    Sign in
                 </Link>
             </p>
         </div>

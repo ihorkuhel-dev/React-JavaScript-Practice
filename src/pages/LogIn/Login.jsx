@@ -9,9 +9,9 @@ export default function LogIn() {
                     <p>Please sigh in your corporate account</p>
                 </div>
                 <LoginForm/>
-                <p>Нет аккаунта?
+                <p>Don't have an account?
                     <Link to="/register">
-                        Зарегистрируйтесь
+                        Sign up
                     </Link>
                 </p>
             </div>

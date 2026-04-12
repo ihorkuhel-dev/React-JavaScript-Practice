@@ -1,7 +1,7 @@
-import {useState} from "react";
+import { useState} from "react";
 import Input from "../../../../shared/api/ui/Input/Input";
-import "./LoginForm.scss";
 import Button from "../../../../shared/api/ui/Button/Button";
+import { rules, validateField} from "../../../../shared/utils/validators";
 
 export default function LoginForm () {
 
@@ -10,6 +10,17 @@ export default function LoginForm () {
 
     const [userNameError, setUserNameError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+
+    const validateFields = () => {
+        const uNameError = validateField(userName, [rules.required, rules.username]);
+        const passError = validateField(password, [rules.required, rules.minLength(8)]);
+
+        setUserNameError(uNameError || '');
+        setPasswordError(passError || '');
+
+        return !uNameError && !passError;
+    }
+
 
     const handleLoginChange = (e) => {
         setUserName(e.target.value);
@@ -23,7 +34,9 @@ export default function LoginForm () {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Данные готовы к отправке:', { username: userName, password });
+        if(validateFields()){
+            console.log('Данные готовы к отправке:', { username: userName, password });
+        }
     }
 
     return (
@@ -53,7 +66,7 @@ export default function LoginForm () {
                 />
             </div>
             <div className="form-group">
-                <Button type="submit">Login</Button>
+                <Button type="submit" >Login</Button>
             </div>
         </form>
     )
