@@ -1,7 +1,19 @@
+import LoginForm from "../../features/auth/ui/LoginForm/LoginForm";
+import {Link} from "react-router-dom";
+
 export default function LogIn() {
     return (
-        <>
-            <h2>Log In page</h2>
-        </>
+            <div className="auth-page">
+                <div className="welcome-message">
+                    <h2>Welcome Back</h2>
+                    <p>Please sigh in your corporate account</p>
+                </div>
+                <LoginForm/>
+                <p className="auth-message">Don't have an account?
+                    <Link to="/register">
+                        Sign up
+                    </Link>
+                </p>
+            </div>
     )
 }

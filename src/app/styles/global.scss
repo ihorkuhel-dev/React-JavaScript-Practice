@@ -1,9 +1,20 @@
 @use "reset.scss";
 @use "normalize.scss";
-@use "variables.scss";
+@use "variables.css";
 
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #f5f5f5;
 }
+
+a, a:visited {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+
+
+
+
+
+

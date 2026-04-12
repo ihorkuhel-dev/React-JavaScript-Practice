@@ -10,7 +10,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const checkAuth = () => {
-    return false
+    return !!localStorage.getItem('token')
 }
 
 
