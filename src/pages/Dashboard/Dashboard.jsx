@@ -1,8 +1,15 @@
+import PageHeader from "../../shared/ui/PageHeader/PageHeader";
+
 export default function Dashboard() {
+
     return (
         <>
-            <h2>Dashboard page</h2>
+            <PageHeader pageName="Dashboard" />
 
+            <div className="page-content">
+                <h2>Dashboard page</h2>
+
+            </div>
         </>
     )
 }
