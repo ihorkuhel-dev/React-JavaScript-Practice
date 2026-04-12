@@ -1,0 +1,23 @@
+.ui-button {
+  width: 100%;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 8px;
+  padding: 16px 24px;
+  color: white;
+  font-size: var(--font-size--p);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--submit-button-box-shadow);
+  &:hover {
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: scale(1.05);
+  }
+}
