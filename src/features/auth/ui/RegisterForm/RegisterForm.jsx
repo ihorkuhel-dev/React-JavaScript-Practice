@@ -1,7 +1,7 @@
 import {useState} from "react";
-import Input from "../../../../shared/api/ui/Input/Input";
-import Button from "../../../../shared/api/ui/Button/Button";
 import {rules, validateField} from "../../../../shared/utils/validators";
+import Input from "../../../../shared/ui/Input/Input";
+import Button from "../../../../shared/ui/Button/Button";
 
 export default function RegisterForm (props) {
 

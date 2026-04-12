@@ -1,7 +1,8 @@
-import {NAV_LINKS} from "../../../shared/config/navigation";
 import {NavLink} from "react-router";
-import Button from "../../../shared/api/ui/Button/Button";
+
+import {NAV_LINKS} from "../../../shared/config/navigation";
 import {RectangleIcon} from "../../../shared/assets/RectangleIcon";
+import Button from "../../../shared/ui/Button/Button";
 
 
 export default function LeftNavPanel() {
