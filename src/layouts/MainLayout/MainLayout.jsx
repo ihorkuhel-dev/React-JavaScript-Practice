@@ -1,5 +1,6 @@
 import SideNavigation from "./SideNavigation/SideNavigation";
 import {Outlet} from "react-router-dom";
+import "./MainLayout.scss"
 
 export default function MainLayout() {
 
