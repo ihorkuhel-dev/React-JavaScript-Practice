@@ -20,4 +20,22 @@
   &:active {
     transform: scale(1.05);
   }
+  &.expand-button{
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 10px 15px;
+    margin-bottom: 48px;
+
+    color: var(--background-color--accent);
+    background: var(--accent-color--darker);
+    box-shadow: var(--button-box-shadow);
+    &:hover {
+      transform:initial;
+    }
+    &:active {
+      transform:initial;
+    }
+  }
+
 }
