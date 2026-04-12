@@ -5,7 +5,7 @@ export default function SideNavigation(props) {
 
     const {type} = props;
 
-    const childrenElement = type === 'navigation-panel' ? LeftNavPanel : RightNavPanel;
+    const childrenElement = type === 'navigation-panel' ? <LeftNavPanel/> : <RightNavPanel/>;
 
     return (
         <nav className={`"side-navigation" ${type}`}>

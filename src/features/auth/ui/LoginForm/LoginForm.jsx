@@ -2,6 +2,11 @@ import { useState} from "react";
 import Input from "../../../../shared/api/ui/Input/Input";
 import Button from "../../../../shared/api/ui/Button/Button";
 import { rules, validateField} from "../../../../shared/utils/validators";
+import {useLoginMutation} from "../../api/authApi";
+import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router";
+import {setCredentials} from "../../model/authSlice";
+
 
 export default function LoginForm () {
 
@@ -10,6 +15,13 @@ export default function LoginForm () {
 
     const [userNameError, setUserNameError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+
+    const [serverError, setServerError] = useState('');
+
+    const [loginTrigger, {isLoading}] = useLoginMutation({})
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const validateFields = () => {
         const uNameError = validateField(userName, [rules.required, rules.username]);
@@ -32,15 +44,37 @@ export default function LoginForm () {
         if (passwordError) setPasswordError('');
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setServerError('');
+
         if(validateFields()){
-            console.log('Данные готовы к отправке:', { username: userName, password });
+            try {
+                const userData = await loginTrigger({
+                    username: userName,
+                    password: password
+                }).unwrap();
+                dispatch(setCredentials(userData));
+                navigate('/');
+            } catch (err){
+                const errorMessage = err?.data?.message || 'Incorrect username or password';
+                setServerError(errorMessage)
+            }
         }
+    }
+
+    const setData = () => {
+        setPassword('emilyspass')
+        setUserName('emilys')
     }
 
     return (
         <form onSubmit={handleSubmit}>
+            {serverError && (
+                <div style={{ color: 'red', marginBottom: '16px', textAlign: 'center' }}>
+                    {serverError}
+                </div>
+            )}
             <div className="form-group">
                 <Input
                     type="text"
@@ -65,8 +99,9 @@ export default function LoginForm () {
                     error={passwordError}
                 />
             </div>
-            <div className="form-group">
-                <Button type="submit" >Login</Button>
+            <div className="form-group button-group">
+                <Button className="login-button" type="submit"  disabled={isLoading}>Login</Button>
+                <Button className="setData-button" type="submin" onClick={setData}>Set data</Button>
             </div>
         </form>
     )

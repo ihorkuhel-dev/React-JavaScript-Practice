@@ -9,7 +9,7 @@ export default function LogIn() {
                     <p>Please sigh in your corporate account</p>
                 </div>
                 <LoginForm/>
-                <p>Don't have an account?
+                <p className="auth-message">Don't have an account?
                     <Link to="/register">
                         Sign up
                     </Link>

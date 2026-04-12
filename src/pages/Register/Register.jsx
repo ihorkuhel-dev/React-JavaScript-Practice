@@ -10,7 +10,7 @@ export default function Register() {
                 <p>Fill out form for registration</p>
             </div>
             <RegisterForm/>
-            <p>Already have an account?
+            <p  className="auth-message">Already have an account?
                 <Link to="/login">
                     Sign in
                 </Link>
