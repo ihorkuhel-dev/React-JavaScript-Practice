@@ -69,3 +69,7 @@ export const SALES_BY_REGION = [
         sales: 374
     }
 ]
+export const LOST_OPPORTUNITY = {
+    currentValue: 1200,
+    maxValue: 1600,
+}

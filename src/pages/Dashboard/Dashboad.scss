@@ -12,6 +12,7 @@
 
   & h3{
     font-size: var(--font-size--categories);
+    margin-bottom: 20px;
   }
 
   & .dashboard--chart{
@@ -30,6 +31,10 @@
     grid-template-columns: repeat(3, 1fr);
   }
   & .dashboard--stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     padding: 20px;
     background-color: var(--background-color--accent);
     grid-area: block3;
