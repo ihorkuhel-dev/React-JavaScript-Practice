@@ -6,7 +6,6 @@
   padding: 16px 24px;
   color: white;
   font-size: var(--font-size--p);
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -32,6 +31,37 @@
     box-shadow: var(--button-box-shadow);
     &:hover {
       transform:initial;
+    }
+    &:active {
+      transform:initial;
+    }
+  }
+  &.header-button{
+    font-size: var(--font-size--p);
+    padding: 8px;
+    margin: 0;
+    width: initial;
+    text-transform: initial;
+  }
+  &.transparent{
+    font-size: var(--font-size--text);
+    width: initial;
+    text-transform: initial;
+    margin: 0;
+    padding: 8px 16px;
+    background: transparent;
+    color: var(--text-color--light);
+    box-shadow: initial;
+    &.active{
+      color: var(--accent-color);
+      &:hover{
+        color: var(--accent-color);
+      }
+    }
+
+    &:hover {
+      transform:initial;
+      color: var(--text-color);
     }
     &:active {
       transform:initial;

@@ -1,0 +1,36 @@
+.BudgetChartHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & h3{
+    margin: 0;
+  }
+  & .ui-tools{
+    display: flex;
+    gap: 40px;
+    align-content: center;
+    justify-content: center;
+    font-size: var(--font-size--text);
+    color: var(--text-color--light);
+
+    & .plan-complete-difference{
+      display: flex;
+      gap: 30px;
+      color: var(--text-color);
+      & span{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &::before{
+          content: "\2022";
+          font-size: var(--font-size--categories);
+          color: var(--accent-color);
+        }
+        &.plan::before{
+          color: var(--accent-color--lighter);
+        }
+      }
+    }
+
+  }
+}
