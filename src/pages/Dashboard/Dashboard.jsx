@@ -4,18 +4,19 @@ import RegionSales from "./components/RegionSales/RegionSales";
 import LostOpportunity from "./components/LostOpportunity/LostOpportunity";
 import "./Dashboad.scss"
 import {CATEGORY_STATS, SALES_BY_REGION} from "./data/dashboardMock";
+import BudgetChart from "./components/BudgetChart/BudgetChart";
 export default function Dashboard() {
+
 
     const maxSales = Math.max(...SALES_BY_REGION.map(item => item.sales)) || 0;
 
     return (
         <>
             <PageHeader pageName="Dashboard" />
-
             <div className="page-content">
                <div className="dashboard">
                    <div className="dashboard--chart">
-
+                        <BudgetChart/>
 
                    </div>
                    <div className="dashboard--category">

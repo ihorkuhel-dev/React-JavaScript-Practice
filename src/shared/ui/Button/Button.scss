@@ -43,5 +43,29 @@
     width: initial;
     text-transform: initial;
   }
+  &.transparent{
+    font-size: var(--font-size--text);
+    width: initial;
+    text-transform: initial;
+    margin: 0;
+    padding: 8px 16px;
+    background: transparent;
+    color: var(--text-color--light);
+    box-shadow: initial;
+    &.active{
+      color: var(--accent-color);
+      &:hover{
+        color: var(--accent-color);
+      }
+    }
+
+    &:hover {
+      transform:initial;
+      color: var(--text-color);
+    }
+    &:active {
+      transform:initial;
+    }
+  }
 
 }
