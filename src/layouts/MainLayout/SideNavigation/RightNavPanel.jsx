@@ -2,6 +2,7 @@ import {NAV_BUTTONS} from "../../../shared/config/navigation";
 import {useNavigate} from "react-router";
 import {useDispatch} from "react-redux";
 import {logout} from "../../../features/auth/model/authSlice";
+import {addToast} from "../../../features/toasts/toastsSlice";
 
 export default function RightNavPanel() {
     const dispatch = useDispatch();
@@ -14,13 +15,22 @@ export default function RightNavPanel() {
                 navigate('/login');
                 break;
             case 'openSettings':
-                console.log('Открываем модалку настроек');
+                dispatch(addToast({
+                    message: actionName,
+                    type: 'info',
+            }))
                 break;
             case 'openUserProfile':
-                console.log('Переходим в профиль');
+                dispatch(addToast({
+                    message: actionName,
+                    type: 'info',
+                }))
                 break;
             case 'openInfo':
-                console.log('Открыть Info');
+                dispatch(addToast({
+                    message: actionName,
+                    type: 'info',
+                }))
                 break;
             default:
                 console.warn('Неизвестное действие:', actionName);

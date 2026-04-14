@@ -1,5 +1,6 @@
-import SideNavigation from "./SideNavigation/SideNavigation";
 import {Outlet} from "react-router-dom";
+import SideNavigation from "./SideNavigation/SideNavigation";
+import ToastContainer from "../../features/toasts/ToastContainer";
 import "./MainLayout.scss"
 
 export default function MainLayout() {
@@ -11,7 +12,7 @@ export default function MainLayout() {
                 <Outlet />
             </main>
             <SideNavigation type="user-panel" />
-
+            <ToastContainer/>
         </div>
     )
 }
