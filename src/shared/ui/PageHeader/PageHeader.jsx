@@ -1,8 +1,11 @@
 import './PageHeader.scss';
 import {PAGE_HEADER} from "../../config/pageTitle";
 import Select from "../Select/Select";
+import {addToast} from "../../../features/toasts/toastsSlice";
+import {useDispatch} from "react-redux";
 
 export default function PageHeader({ pageName }) {
+    const dispatch = useDispatch();
 
     const header = PAGE_HEADER.find(item => item.name === pageName);
     if (!header) return null;
@@ -16,16 +19,10 @@ export default function PageHeader({ pageName }) {
     const layoutClass = header.controls?.coords === 'top' ? 'layout-top' : 'layout-bottom';
 
     const handleAction = (actionName) => {
-        switch (actionName) {
-            case 'edit':
-                console.log('edit...');
-                break;
-            case 'export':
-                console.log('export');
-                break;
-            default:
-                console.warn('Неизвестное действие:', actionName);
-        }
+        dispatch(addToast({
+            message: actionName,
+            type: 'success',
+        }));
     };
 
     return (
