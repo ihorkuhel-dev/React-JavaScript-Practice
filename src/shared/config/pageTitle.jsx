@@ -8,8 +8,13 @@ export const PAGE_HEADER = [
             control: [
                 {
                     id: 1,
-                    title: "Actions",
+                    title: "Action",
                     type: "select",
+                    placeholder: "Action",
+                    options: [
+                        { value: "edit", label: "Edit" },
+                        { value: "export", label: "Export" }
+                    ],
                     className: "transparent",
                 }
             ]
@@ -38,6 +43,7 @@ export const PAGE_HEADER = [
                     id: 2,
                     title: "Customize",
                     type: "select",
+                    options: [],
                     className: "",
                 }
             ]
@@ -60,6 +66,11 @@ export const PAGE_HEADER = [
                     id: 2,
                     title: "Operations",
                     type: "select",
+                    placeholder: "Action",
+                    options: [
+                        { value: "edit", label: "Edit" },
+                        { value: "export", label: "Export" }
+                    ],
                     className: "transparent",
                 }
             ]

@@ -1,5 +1,6 @@
 import './PageHeader.scss';
 import {PAGE_HEADER} from "../../config/pageTitle";
+import Select from "../Select/Select";
 
 export default function PageHeader({ pageName }) {
 
@@ -14,13 +15,23 @@ export default function PageHeader({ pageName }) {
 
     const layoutClass = header.controls?.coords === 'top' ? 'layout-top' : 'layout-bottom';
 
+    const handleAction = (actionName) => {
+        switch (actionName) {
+            case 'edit':
+                console.log('edit...');
+                break;
+            case 'export':
+                console.log('export');
+                break;
+            default:
+                console.warn('Неизвестное действие:', actionName);
+        }
+    };
+
     return (
         <div className={`page-header ${layoutClass}`}>
-
-
             <div className="page-header__info">
                 {title && <h1 className="page-header__title">{title}</h1>}
-
                 {subtitle && (
                     <p className="page-header__subtitle">
                         {subtitle}
@@ -28,26 +39,27 @@ export default function PageHeader({ pageName }) {
                 )}
             </div>
 
-
             {controls && (
                 <div className="page-header__controls">
                     {controls.control.map((ctrl) => {
                         if (ctrl.type === 'select') {
                             return (
-                                <select key={ctrl.id} className={`ui-select ${ctrl.className}`}>
-                                    <option>{ctrl.title}</option>
-                                </select>
+                                <Select key={ctrl.id}
+                                        config={ctrl}
+                                        onChange={(val) => handleAction(val)}
+                                />
                             );
                         }
                         return (
-                            <button key={ctrl.id} className={`ui-button ${ctrl.className} header-button`}>
+                            <button key={ctrl.id}
+                                    className={`ui-button ${ctrl.className} header-button`}
+                                    onClick={() => handleAction(ctrl.action)}>
                                 {ctrl.title}
                             </button>
                         );
                     })}
                 </div>
             )}
-
         </div>
     );
 }

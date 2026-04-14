@@ -1,5 +1,5 @@
 import {NAV_BUTTONS} from "../../../shared/config/navigation";
-import { useNavigate} from "react-router";
+import {useNavigate} from "react-router";
 import {useDispatch} from "react-redux";
 import {logout} from "../../../features/auth/model/authSlice";
 
