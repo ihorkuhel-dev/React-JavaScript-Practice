@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
                         element: <ClientList />,
                     },
                     {
-                        path: 'client-card',
+                        path: 'client-card/:id',
                         element: <ClientCard />,
                     },
                     {

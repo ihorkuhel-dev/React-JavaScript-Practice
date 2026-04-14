@@ -58,13 +58,23 @@
         color: var(--accent-color);
       }
     }
-
     &:hover {
       transform:initial;
       color: var(--text-color);
     }
     &:active {
       transform:initial;
+    }
+
+    &.pagination-btn{
+      color: var(--text-color);
+      font-size: var(--font-size--categories);
+      &:hover{
+        color: var(--accent-color);
+      }
+      &:disabled{
+        color: var(--text-color--light);
+      }
     }
   }
 

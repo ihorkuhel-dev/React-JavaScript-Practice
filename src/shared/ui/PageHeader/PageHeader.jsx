@@ -4,7 +4,7 @@ import Select from "../Select/Select";
 import {addToast} from "../../../features/toasts/toastsSlice";
 import {useDispatch} from "react-redux";
 
-export default function PageHeader({ pageName }) {
+export default function PageHeader({ pageName, children }) {
     const dispatch = useDispatch();
 
     const header = PAGE_HEADER.find(item => item.name === pageName);
@@ -57,6 +57,8 @@ export default function PageHeader({ pageName }) {
                     })}
                 </div>
             )}
+
+            {children}
         </div>
     );
 }
