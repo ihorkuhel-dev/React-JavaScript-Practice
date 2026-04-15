@@ -36,6 +36,7 @@ export default function ClientInformationTable({data, title, editAble}) {
 
     const cancelChanges = () => {
         setLocalData(data)
+        disableEdit()
     }
 
     const handleSubmit = (e) => {

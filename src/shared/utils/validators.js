@@ -17,6 +17,20 @@ export const rules = {
         return null;
     },
 
+    phone: (value) => {
+        const phoneRegex = /^\+?[\d\s\-()]+$/;
+        if(value && !phoneRegex.test(value)) return 'Invalid phone number';
+        return null;
+    },
+    number: (value) => {
+        if (value && isNaN(Number(value))) return 'Must be a valid number';
+        return null;
+    },
+
+    date: (value) => {
+        if (value && isNaN(Date.parse(value))) return 'Invalid date format';
+    },
+
     minLength: (min) => (value) => {
         if (value && value.length < min) return `Minimum length - ${min}`;
         return null;
