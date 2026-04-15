@@ -9,6 +9,7 @@ export default function Input(props) {
         autoComplete = 'off',
         required = true,
         classList = '',
+        placeholder = '',
         name,
         id,
         value,
@@ -31,6 +32,7 @@ export default function Input(props) {
                     value={value}
                     onChange={onChange}
                     autoComplete={autoComplete}
+                    placeholder={placeholder}
                     className={`${value ? 'has-value' : ''} ${classList}`}
                 />
                 <label htmlFor={id}>{label}</label>
