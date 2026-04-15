@@ -40,7 +40,7 @@
     font-size: var(--font-size--p);
     padding: 8px;
     margin: 0;
-    width: initial;
+    width: stretch;
     text-transform: initial;
   }
   &.transparent{
@@ -78,4 +78,8 @@
     }
   }
 
+}
+
+.tool-bar .transparent{
+  padding: 0;
 }

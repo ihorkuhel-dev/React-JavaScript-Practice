@@ -50,7 +50,9 @@ export default function PageHeader({ pageName, children, id }) {
                         return (
                             <button key={ctrl.id}
                                     className={`ui-button ${ctrl.className} header-button`}
-                                    onClick={() => handleAction(ctrl.action)}>
+                                    onClick={() => handleAction(ctrl.action)}
+
+                            >
                                 {ctrl.title}
                             </button>
                         );

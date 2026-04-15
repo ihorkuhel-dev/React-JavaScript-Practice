@@ -8,6 +8,7 @@ export default function Input(props) {
         type = 'text',
         autoComplete = 'off',
         required = true,
+        classList = '',
         name,
         id,
         value,
@@ -21,7 +22,7 @@ export default function Input(props) {
 
     return (
         <>
-            <div className={`input-wrapper ${type}-wrapper ${error && 'error-wrapper'}`}>
+            <div className={`input-wrapper ${type}-wrapper ${error && 'error-wrapper'} `}>
                 <input
                     type={inputType}
                     id={id}
@@ -30,7 +31,7 @@ export default function Input(props) {
                     value={value}
                     onChange={onChange}
                     autoComplete={autoComplete}
-                    className={value ? 'has-value' : '' }
+                    className={`${value ? 'has-value' : ''} ${classList}`}
                 />
                 <label htmlFor={id}>{label}</label>
                 {type === 'password' && (

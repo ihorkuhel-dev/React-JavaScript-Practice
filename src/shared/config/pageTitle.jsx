@@ -36,7 +36,7 @@ export const PAGE_HEADER = [
                 {
                     id: 1,
                     title: "Send email",
-                    type: "text",
+                    type: "link",
                     className: "",
                 },
                 {

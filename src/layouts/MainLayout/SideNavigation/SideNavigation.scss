@@ -4,6 +4,9 @@
   justify-content: center;
   height: 100%;
   padding-top: 30px;
+  flex-shrink: 0;
+
+
   &.navigation-panel{
     background: var(--accent-color);
     border-radius: 0 10px 10px 0;
