@@ -4,7 +4,7 @@ import Select from "../Select/Select";
 import {addToast} from "../../../features/toasts/toastsSlice";
 import {useDispatch} from "react-redux";
 
-export default function PageHeader({ pageName, children }) {
+export default function PageHeader({ pageName, children, id }) {
     const dispatch = useDispatch();
 
     const header = PAGE_HEADER.find(item => item.name === pageName);
@@ -31,7 +31,7 @@ export default function PageHeader({ pageName, children }) {
                 {title && <h1 className="page-header__title">{title}</h1>}
                 {subtitle && (
                     <p className="page-header__subtitle">
-                        {subtitle}
+                        {subtitle} {id && (id)}
                     </p>
                 )}
             </div>
