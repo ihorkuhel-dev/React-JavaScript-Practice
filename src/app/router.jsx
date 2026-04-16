@@ -8,9 +8,10 @@ import ClientCard from "../pages/ClientCard/ClientCard";
 import Product from "../pages/Product/Product";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Cookies from "js-cookie";
 
 const checkAuth = () => {
-    return !!localStorage.getItem('token')
+    return !!Cookies.get('token')
 }
 
 
