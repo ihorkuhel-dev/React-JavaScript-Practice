@@ -1,10 +1,11 @@
-import './ClientInformationTable.scss';
-import Button from "../../../shared/ui/Button/Button";
-import EditIcon from "../../../shared/assets/EditIcon";
+import "./InfoCard.scss"
 import {useEffect, useState} from "react";
-import Input from "../../../shared/ui/Input/Input";
+import Button from "../Button/Button";
+import EditIcon from "../../assets/EditIcon";
+import Input from "../Input/Input";
 
-export default function ClientInformationTable({data, title, editAble}) {
+
+export default function InfoCard({data, title, editAble}) {
 
     if (!data) return null;
 
