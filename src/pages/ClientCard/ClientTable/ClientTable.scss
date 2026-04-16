@@ -1,0 +1,23 @@
+.overflow-x-wrap{
+  overflow-x: auto;
+}
+
+.table-client{
+  width: 100%;
+  height: 100%;
+  color: var(--text-color);
+  font-size: var(--font-size--p);
+  border-collapse: collapse;
+
+  & th, & td{
+    border: 1px solid var(--accent-color--lighter);
+    padding: 10px 20px;
+  }
+}
+
+.table-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}

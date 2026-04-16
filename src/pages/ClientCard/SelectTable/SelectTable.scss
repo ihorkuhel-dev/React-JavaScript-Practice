@@ -1,0 +1,25 @@
+.lables{
+  margin-top: 30px;
+  ul{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-size: var(--font-size--sub-categories);
+    color: var(--text-color);
+
+    li{
+      padding: 10px 20px;
+      min-width: 210px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid transparent;
+      border-bottom: 1px solid var(--accent-color);
+      border-radius: 10px 10px 0 0;
+      cursor: pointer;
+      &.selected{
+        border: 1px solid var(--accent-color);
+        border-bottom: 1px solid transparent;;
+      }
+    }
+  }
+}

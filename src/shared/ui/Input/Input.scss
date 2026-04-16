@@ -35,6 +35,17 @@
     &:focus ~ .input-border {
       width: 100%;
     }
+    &.edit{
+      font-size: var(--font-size--text);
+      padding: 0;
+      background: transparent;
+      font-weight: initial;
+      border-radius: 2px;
+      &.table-cell{
+        padding: 10px 20px;
+
+      }
+    }
   }
 
   &.error-wrapper {

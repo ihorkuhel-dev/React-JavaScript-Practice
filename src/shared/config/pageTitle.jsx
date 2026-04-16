@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 export const PAGE_HEADER = [
     {
         id: 1,
@@ -36,8 +38,8 @@ export const PAGE_HEADER = [
                 {
                     id: 1,
                     title: "Send email",
-                    type: "text",
-                    className: "",
+                    as: "a",
+                    link: "",
                 },
                 {
                     id: 2,
@@ -59,8 +61,10 @@ export const PAGE_HEADER = [
                 {
                     id: 1,
                     title: "Close",
-                    type: "text",
+                    as: NavLink,
+                    to: "/",
                     className: "",
+                    action: false
                 },
                 {
                     id: 2,

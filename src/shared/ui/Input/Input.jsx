@@ -8,6 +8,8 @@ export default function Input(props) {
         type = 'text',
         autoComplete = 'off',
         required = true,
+        classList = '',
+        placeholder = '',
         name,
         id,
         value,
@@ -21,7 +23,7 @@ export default function Input(props) {
 
     return (
         <>
-            <div className={`input-wrapper ${type}-wrapper ${error && 'error-wrapper'}`}>
+            <div className={`input-wrapper ${type}-wrapper ${error && 'error-wrapper'} `}>
                 <input
                     type={inputType}
                     id={id}
@@ -30,16 +32,18 @@ export default function Input(props) {
                     value={value}
                     onChange={onChange}
                     autoComplete={autoComplete}
-                    className={value ? 'has-value' : '' }
+                    placeholder={placeholder}
+                    className={`${value ? 'has-value' : ''} ${classList}`}
                 />
-                <label htmlFor={id}>{label}</label>
+                {label && (
+                    <label htmlFor={id}>{label}</label>
+                )}
                 {type === 'password' && (
                     <PasswordToggle
                         showPassword={showPassword}
                         onToggle={() => setShowPassword(!showPassword)}
                     />
                 )}
-                <span className="input-border"></span>
             </div>
             {error && (
                 <div className="input-error">{error}</div>

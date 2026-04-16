@@ -40,7 +40,7 @@
     font-size: var(--font-size--p);
     padding: 8px;
     margin: 0;
-    width: initial;
+    width: stretch;
     text-transform: initial;
   }
   &.transparent{
@@ -77,5 +77,16 @@
       }
     }
   }
+  &.table-controls{
+    width: fit-content;
+    background: var(--accent-color--lighter);
+    &:hover{
+      background: var(--accent-color);
+    }
+  }
 
+}
+
+.tool-bar .transparent{
+  padding: 0;
 }

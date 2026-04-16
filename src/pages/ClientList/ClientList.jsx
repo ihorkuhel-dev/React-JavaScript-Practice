@@ -1,7 +1,7 @@
 import PageHeader from "../../shared/ui/PageHeader/PageHeader";
 import {useGetClientsQuery} from "../../features/clients/api/clientsApi";
 import {useSearchParams} from "react-router-dom";
-import ClientTable from "./components/ClientTable/ClientTable";
+import ClientListTable from "./components/ClientListTable/ClientListTable";
 import Pagination from "./components/Pagination/Pagination";
 
 export default function ClientList() {
@@ -28,7 +28,7 @@ export default function ClientList() {
             <PageHeader pageName="Customers">
             </PageHeader>
             <div className="page-content">
-                <ClientTable clients={clients} isLoading={isLoading}/>
+                <ClientListTable clients={clients} isLoading={isLoading}/>
                 <Pagination currentLimit={currentLimit} currentPage={currentPage} totalClients={totalClients}/>
             </div>
 
