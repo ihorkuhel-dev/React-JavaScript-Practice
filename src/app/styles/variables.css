@@ -11,15 +11,16 @@
 
     --text-color: #353535;
     --text-color--light: #979797;
+    --text-color--white: #ffffff;
     --stroke-color: #D9D9D9;
 
     --green: #45B73B;
     --blue: #263ED4;
     --red: #c63031;
 
-    --button-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 25%);
-    --circle-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
-    --aside-nav-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    --button-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+    --circle-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    --aside-nav-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     --input-box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     --submit-button-box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     --error-box-shadow: 0 4px 12px rgba(198, 48, 49, 0.3);
@@ -33,12 +34,48 @@
 
     --icon-size: 30px;
 
+
     --gap-side-nav: 15px;
     --gap-info-card: 30px;
+    --gap-header-page: 20px;
+    --gap-button-group: 15px;
+
+    --gap-xs: 10px;
+    --gap-s: 15px;
+    --gap-m: 20px;
+    --gap-xl: 40px;
+
+    --gap-dashboard: 20px;
+    --gap-dashboard-block: 32px;
+    --gap-dashboard-control: 66px;
+    --gap-dashboard-controls: 24px;
+
+    --border-radius-s: 4px;
+    --border-radius-m: 8px;
+    --border-radius-l: 10px;
+    --border-radius-xl: 15px;
+
 
     --padding-side-nav: 50px 0;
     --padding-side-nav-items: 15px 35px;
 
-    --padding-info-card: 20px;
-    --padding-block-header: 15px
+    --padding-card: 20px;
+
+    --padding-info-card-stroke: 10px 0;
+
+    --padding-block-header: 15px;
+
+    --padding-button-small: 10px;
+    --padding-button-medium: 15px;
+    --padding-button: 16px 24px;
+
+    --padding-category-button: 10px 30px;
+    --padding-table-cell: 10px 20px;
+
+    --padding-page-header: 45px 20px 20px 20px;
+
+    --padding-dashboard-block: 20px;
+    --padding-dashboard-block-large: 32px;
+
+    --padding-input: 10px 15px;
 }
