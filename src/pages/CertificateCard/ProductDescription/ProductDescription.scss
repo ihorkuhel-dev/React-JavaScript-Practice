@@ -1,0 +1,19 @@
+.category-block{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  & .category{
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & .category-description{
+      padding:20px 30px;
+      border-radius: 10px;
+      background: var(--background-color);
+    }
+  }
+}
+

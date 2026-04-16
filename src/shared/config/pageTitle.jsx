@@ -45,7 +45,10 @@ export const PAGE_HEADER = [
                     id: 2,
                     title: "Customize",
                     type: "select",
-                    options: [],
+                    options: [
+                        { value: "edit", label: "Edit" },
+                        { value: "export", label: "Export" }
+                    ],
                     className: "",
                 }
             ]
