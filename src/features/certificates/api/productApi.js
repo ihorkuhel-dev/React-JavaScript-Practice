@@ -12,7 +12,7 @@ export const productApi = baseApi.injectEndpoints({
         }),
         getFirstProduct: builder.query({
             query: 'products/1',
-            providesTags: (result, error) => [{ type: 'Products'}]
+            providesTags: ['Products']
         })
     })
 });
