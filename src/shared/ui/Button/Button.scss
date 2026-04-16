@@ -77,6 +77,13 @@
       }
     }
   }
+  &.table-controls{
+    width: fit-content;
+    background: var(--accent-color--lighter);
+    &:hover{
+      background: var(--accent-color);
+    }
+  }
 
 }
 

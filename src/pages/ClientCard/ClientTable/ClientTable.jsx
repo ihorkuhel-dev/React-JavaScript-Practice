@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ClientTable.scss';
 import Input from "../../../shared/ui/Input/Input";
+import Button from "../../../shared/ui/Button/Button";
 
 export default function ClientTable(props) {
     const { tabData, activeTab } = props;
@@ -93,7 +94,8 @@ export default function ClientTable(props) {
                         {row.isNew && col.placeholder ? (
                             <div onKeyDown={handleKeyDown}>
                                 <Input
-                                    classList="edit"
+                                    classList="edit table-cell"
+                                    id={`${col.key}-input`}
                                     placeholder={col.placeholder}
                                     value={row[col.key] || ''}
                                     onChange={(e) => handleInputChange(row.id, col.key, e.target.value)}
@@ -112,9 +114,9 @@ export default function ClientTable(props) {
 
             {isEditableTable && (
                 <div className="table-controls">
-                    <button className="control-btn" onClick={handleRemoveRow}>-</button>
-                    <button className="control-btn save-btn" onClick={handleSaveRow}>Save</button>
-                    <button className="control-btn" onClick={handleAddRow}>+</button>
+                    <Button className="table-controls" onClick={handleRemoveRow} type="button">-</Button>
+                    <Button className="table-controls" onClick={handleSaveRow} type="button">Save</Button>
+                    <Button className="table-controls" onClick={handleAddRow} type="button">+</Button>
                 </div>
             )}
         </div>
