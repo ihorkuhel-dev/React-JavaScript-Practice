@@ -2,13 +2,13 @@ import PageHeader from "../../shared/ui/PageHeader/PageHeader";
 import {useGetFirstProductQuery} from "../../features/products/api/productApi";
 import {useMemo} from "react";
 import InfoCard from "../../shared/ui/InfoCard/InfoCard";
-import './CertificateCard.scss'
+import './Product.scss'
 import BlockHeader from "../../shared/ui/BlockHeader/BlockHeader";
 import ProductDetails from "./ProductDetails/ProductDetails";
 
-export default function CertificateCard() {
+export default function Product() {
 
-    const { data, isLoading } = useGetFirstProductQuery();
+    const { data } = useGetFirstProductQuery();
 
     const { info, reviews,  productDetails} = useMemo(() => {
         if (!data) return {info: [], reviews: [],productDetails: []};
@@ -56,7 +56,7 @@ export default function CertificateCard() {
 
     return (
         <>
-            <PageHeader pageName="Certificate" />
+            <PageHeader pageName="Product" />
 
             <div className="page-content product-page">
                 <InfoCard data={info} title="Product Info" className="product-detail-info"/>

@@ -56,8 +56,8 @@ export const PAGE_HEADER = [
     },
     {
         id: 4,
-        name: "Certificate",
-        title: "Certificate:",
+        name: "Product",
+        title: "Product:",
         controls: {
             coords: 'bottom',
             control: [
