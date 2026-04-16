@@ -1,10 +1,11 @@
-import './ClientInformationTable.scss';
-import Button from "../../../shared/ui/Button/Button";
-import EditIcon from "../../../shared/assets/EditIcon";
+import "./InfoCard.scss"
 import {useEffect, useState} from "react";
-import Input from "../../../shared/ui/Input/Input";
+import Button from "../Button/Button";
+import EditIcon from "../../assets/EditIcon";
+import Input from "../Input/Input";
 
-export default function ClientInformationTable({data, title, editAble}) {
+
+export default function InfoCard({data, title, editAble, className = ''}) {
 
     if (!data) return null;
 
@@ -70,7 +71,7 @@ export default function ClientInformationTable({data, title, editAble}) {
     return (
         <>
             {activeEdit ? (
-                    <form className="info-card__list" onSubmit={handleSubmit}>
+                    <form className={`info-card__list ${className}`} onSubmit={handleSubmit}>
 
                         <div className="header">
                             <h4>{title}</h4>
@@ -85,7 +86,7 @@ export default function ClientInformationTable({data, title, editAble}) {
                     </form>
                 ) :
                 (
-                    <dl className="info-card__list">
+                    <dl className={`info-card__list ${className}`}>
                         <div className="header">
                             <h4>{title}</h4>
                             <ToolBar/>

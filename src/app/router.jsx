@@ -5,7 +5,7 @@ import Register from "../pages/Register/Register";
 import MainLayout from "../layouts/MainLayout/MainLayout";
 import ClientList from "../pages/ClientList/ClientList";
 import ClientCard from "../pages/ClientCard/ClientCard";
-import CertificateCard from "../pages/CertificateCard/CertificateCard";
+import Product from "../pages/Product/Product";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
@@ -55,8 +55,8 @@ export const router = createBrowserRouter([
                         element: <ClientCard />,
                     },
                     {
-                        path: 'certificate-card',
-                        element: <CertificateCard />,
+                        path: 'product',
+                        element: <Product />,
                     },
                     {
                         index: true,

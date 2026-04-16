@@ -15,8 +15,8 @@ export const NAV_LINKS = [
     },
     {
         id: 2,
-        path: '/certificate-card',
-        label: 'Certificate',
+        path: '/product',
+        label: 'Product',
         icon: CertificateIcon,
     },
     {

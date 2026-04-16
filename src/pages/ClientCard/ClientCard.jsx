@@ -1,6 +1,5 @@
 import { useGetClientByIdQuery } from "../../features/clients/api/clientsApi";
 import PageHeader from "../../shared/ui/PageHeader/PageHeader";
-import ClientInformationTable from "./ClientInformationTable/ClientInformationTable";
 import BlockHeader from "../../shared/ui/BlockHeader/BlockHeader";
 import DescriptionIcon from "../../shared/assets/DescriptionIcon";
 import SelectTable from "./SelectTable/SelectTable";
@@ -9,6 +8,7 @@ import { TABLE_LABELS } from "../../shared/config/TableLables";
 import { useState, useMemo } from "react";
 import { useParams } from "react-router";
 import "./ClientCard.scss";
+import InfoCard from "../../shared/ui/InfoCard/InfoCard";
 
 const formatAddress = (addressObj) => {
     if (!addressObj) return "No address provided";
@@ -101,8 +101,8 @@ export default function ClientCard() {
             <PageHeader pageName="Customer information" id={id} />
             <div className="page-content client">
                 <div className="client-information">
-                    <ClientInformationTable data={personalData} title="Customer information" editAble={true} />
-                    <ClientInformationTable data={contactDetails} title="Master contact detail" editAble={true} />
+                    <InfoCard data={personalData} title="Customer information" editAble={true} />
+                    <InfoCard data={contactDetails} title="Master contact detail" editAble={true} />
                 </div>
 
                 <div className="client-details">

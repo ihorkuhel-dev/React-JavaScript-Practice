@@ -45,7 +45,10 @@ export const PAGE_HEADER = [
                     id: 2,
                     title: "Customize",
                     type: "select",
-                    options: [],
+                    options: [
+                        { value: "edit", label: "Edit" },
+                        { value: "export", label: "Export" }
+                    ],
                     className: "",
                 }
             ]
@@ -53,8 +56,8 @@ export const PAGE_HEADER = [
     },
     {
         id: 4,
-        name: "Certificate",
-        title: "Certificate:",
+        name: "Product",
+        title: "Product:",
         controls: {
             coords: 'bottom',
             control: [
