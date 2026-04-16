@@ -3,6 +3,7 @@ import {PAGE_HEADER} from "../../config/pageTitle";
 import Select from "../Select/Select";
 import {addToast} from "../../../features/toasts/toastsSlice";
 import {useDispatch} from "react-redux";
+import Button from "../Button/Button";
 
 export default function PageHeader({ pageName, children, id }) {
     const dispatch = useDispatch();
@@ -19,10 +20,12 @@ export default function PageHeader({ pageName, children, id }) {
     const layoutClass = header.controls?.coords === 'top' ? 'layout-top' : 'layout-bottom';
 
     const handleAction = (actionName) => {
-        dispatch(addToast({
-            message: actionName,
-            type: 'success',
-        }));
+        if(actionName){
+            dispatch(addToast({
+                message: actionName,
+                type: 'success',
+            }));
+        }
     };
 
     return (
@@ -48,13 +51,15 @@ export default function PageHeader({ pageName, children, id }) {
                             );
                         }
                         return (
-                            <button key={ctrl.id}
-                                    className={`ui-button ${ctrl.className} header-button`}
+                            <Button key={ctrl.id}
+                                    className={`ui-button ${ctrl.className || ''} header-button`}
+                                    as={ctrl?.as}
+                                    to={ctrl?.to}
+                                    link={ctrl.link}
                                     onClick={() => handleAction(ctrl.action)}
-
                             >
                                 {ctrl.title}
-                            </button>
+                            </Button>
                         );
                     })}
                 </div>

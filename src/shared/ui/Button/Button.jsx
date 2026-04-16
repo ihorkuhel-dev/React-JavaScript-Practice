@@ -1,22 +1,37 @@
 import "./Button.scss"
+export default function Button({ as = 'button', children, ...rest }) {
 
-export default function Button(props) {
+    const Tag = as;
+
     const {
-        children,
-        type= 'button',
-        disabled = false,
+        type= as === 'button'? 'button' : '',
+        disabled = as === 'button'? false: '',
+
+        to,
+        label,
+
+        href,
+        target,
+
         onClick,
         className = ''
-    } = props
+    } = rest
 
     return (
-        <button
+        <Tag
             className={`ui-button ${className}`}
-        type={type}
-        disabled={disabled}
-        onClick={onClick}
+            type={type}
+            disabled={disabled}
+
+            to={to}
+            label={label}
+
+            href={href}
+            target={target}
+
+            onClick={onClick}
         >
             {children}
-        </button>
+        </Tag>
     )
 }
