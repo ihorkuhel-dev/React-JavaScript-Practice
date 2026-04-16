@@ -2,7 +2,7 @@ import {isRouteErrorResponse, useRouteError} from "react-router";
 
 export default function ErrorPage() {
     const error = useRouteError()
-
+    console.log(error)
     if(isRouteErrorResponse(error)) {
         if(error.status === 404) {
             return(

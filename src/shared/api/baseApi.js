@@ -1,17 +1,18 @@
 import { createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import Cookies from "js-cookie";
 
 export const baseApi = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
         baseUrl: 'https://dummyjson.com',
         prepareHeaders: (headers) => {
-            const token = localStorage.getItem('token');
+            const token = Cookies.get('token');
             if (token) {
                 headers.set('Authorization', `Bearer ${token}`);
             }
             return headers;
         }
     }),
-    tagTypes: ['CLents', 'Auth', "Products"],
+    tagTypes: ['CLents', 'Auth', "Products", "User"],
     endpoints: () => ({}),
 })
