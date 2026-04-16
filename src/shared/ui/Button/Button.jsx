@@ -13,6 +13,8 @@ export default function Button({ as = 'button', children, ...rest }) {
         href,
         target,
 
+        title,
+
         onClick,
         className = ''
     } = rest
@@ -30,6 +32,8 @@ export default function Button({ as = 'button', children, ...rest }) {
             target={target}
 
             onClick={onClick}
+
+            title={title}
         >
             {children}
         </Tag>

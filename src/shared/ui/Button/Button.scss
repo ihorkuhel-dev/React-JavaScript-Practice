@@ -84,6 +84,22 @@
       background: var(--accent-color);
     }
   }
+  &.nav-button{
+    background: transparent;
+    padding: 10px 40px;
+    width: max-content;
+    height: fit-content;
+    border: none;
+    box-shadow: none;
+    & svg{
+      width: 30px;
+      height: 30px;
+    }
+    &:hover, &:active{
+      transform:initial;
+    }
+  }
+
 
 }
 

@@ -1,12 +1,18 @@
 import {NAV_BUTTONS} from "../../../shared/config/navigation";
 import {useNavigate} from "react-router";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../../../features/auth/model/authSlice";
 import {addToast} from "../../../features/toasts/toastsSlice";
+import {selectUser} from "../../../features/user/model/userSlice";
+import Button from "../../../shared/ui/Button/Button";
 
 export default function RightNavPanel() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const userInfo = useSelector(selectUser)
+    const userName = ( userInfo.user?.firstName + " " + userInfo?.user?.lastName ) ?? 'User'
+
 
     const handleAction = (actionName) => {
         switch (actionName) {
@@ -43,9 +49,16 @@ export default function RightNavPanel() {
                 const Icon = btn.icon;
                 return (
                     <li key={btn.id}>
-                        <button className="nav-button" title={btn.label} onClick={() => handleAction(btn.onClick)}>
+                        <Button className="nav-button"
+                                title={btn.label === 'User Profile' ?
+                                    userName + " profile" :
+                                    btn.label
+                        }
+                                onClick={() => handleAction(btn.onClick)}
+
+                        >
                             {Icon && <Icon />}
-                        </button>
+                        </Button>
                     </li>
 
                 );
