@@ -38,15 +38,16 @@ export default function ClientListTable(props) {
     }
 
     return (
+            <div className="table-wrapper">
                 <table className="client-table">
                     <thead>
                     <tr>
                         <th onClick={() => handleSort('id')}>ID {renderSortIndicator('id')}</th>
-                        <th onClick={() => handleSort('firstName')}>Имя клиента {renderSortIndicator('firstName')}</th>
-                        <th onClick={() => handleSort('age')}>Возраст {renderSortIndicator('age')}</th>
+                        <th onClick={() => handleSort('firstName')}>Name {renderSortIndicator('firstName')}</th>
+                        <th onClick={() => handleSort('age')}>Age {renderSortIndicator('age')}</th>
                         <th onClick={() => handleSort('email')}>Email {renderSortIndicator('email')}</th>
-                        <th onClick={() => handleSort('phone')}>Телефон {renderSortIndicator('phone')}</th>
-                        <th onClick={() => handleSort('company.title')}>Должность {renderSortIndicator('company.title')}</th>
+                        <th onClick={() => handleSort('phone')}>Phone {renderSortIndicator('phone')}</th>
+                        <th onClick={() => handleSort('company.title')}>Role {renderSortIndicator('company.title')}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -62,5 +63,6 @@ export default function ClientListTable(props) {
                     ))}
                     </tbody>
                 </table>
+            </div>
     );
 };
