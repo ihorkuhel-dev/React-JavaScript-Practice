@@ -17,16 +17,9 @@ export default function LeftNavPanel() {
                 const Icon = link.icon;
                 return (
                     <li key={link.id}>
-                        <Button className="nav-button"
-                                as={NavLink}
-                                to={link.path}
-                                aria-label={link.label}
-                                title={link.label}>
+                        <NavLink className="nav-button" to={link.path} aria-label={link.label} title={link.label}>
                             {Icon && <Icon aria-hidden="true"/>}
-                        </Button>
-                        {/*<NavLink className="nav-button" to={link.path} aria-label={link.label} title={link.label}>*/}
-                        {/*    {Icon && <Icon aria-hidden="true"/>}*/}
-                        {/*</NavLink>*/}
+                        </NavLink>
                     </li>
 
                 );

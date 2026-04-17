@@ -28,8 +28,10 @@
     &.client{
       gap: 40px;
     }
-    &.client-list{
-      justify-content: space-between;
+    &.product-page{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 20px;
     }
   }
 }

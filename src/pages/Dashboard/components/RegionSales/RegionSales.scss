@@ -1,32 +1,31 @@
 .stast-by-region {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xs);
+  gap: 10px;
+}
 
-  & .region_sales {
+.region_sales{
+  width: 100%;
+  font-size: var(--font-size--p);
+
+  & .region_sales--label{
+    display: flex;
+    justify-content: space-between;
+  }
+  & .region_sales--track{
     width: 100%;
-    font-size: var(--font-size--p);
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
 
-    & .region_sales--label {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    & .region_sales--track {
-      width: 100%;
-      height: fit-content;
-      align-items: center;
-      justify-content: space-between;
-      overflow: hidden;
-      display: flex;
-      gap: var(--gap-xs);
-
-      & .region_sales--bar {
-        background-color: var(--accent-color);
-        border-radius: var(--border-radius-xl);
-        height: 6px;
-        transition: width 0.8s ease;
-      }
+    & .region_sales--bar{
+      height: 6px;
+      background-color: var(--accent-color);
+      border-radius: 15px;
+      transition: width 0.8s ease;
     }
   }
 }
