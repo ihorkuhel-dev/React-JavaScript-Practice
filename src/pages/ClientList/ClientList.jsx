@@ -6,7 +6,7 @@ import Pagination from "./components/Pagination/Pagination";
 
 export default function ClientList() {
 
-    let [searchParams, setSearchParams] = useSearchParams();
+    let [searchParams] = useSearchParams();
 
     const currentPage = Number(searchParams.get('page')) || 1;
     const currentLimit = Number(searchParams.get('limit')) || 10;
@@ -27,7 +27,7 @@ export default function ClientList() {
         <>
             <PageHeader pageName="Customers">
             </PageHeader>
-            <div className="page-content">
+            <div className="page-content client-list">
                 <ClientListTable clients={clients} isLoading={isLoading}/>
                 <Pagination currentLimit={currentLimit} currentPage={currentPage} totalClients={totalClients}/>
             </div>
