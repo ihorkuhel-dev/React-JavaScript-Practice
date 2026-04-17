@@ -18,6 +18,6 @@
 .table-controls {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: var(--gap-xs);
   margin-top: 10px;
 }

@@ -6,8 +6,8 @@
   input {
     background: var(--background-color--accent);
     border: 2px solid var(--stroke-color);
-    border-radius: 8px;
-    padding: 16px;
+    border-radius: var(--border-radius-m);
+    padding: var(--padding-input);
     color: var(--text-color);
     font-size: var(--font-size--p);
     font-weight: 400;

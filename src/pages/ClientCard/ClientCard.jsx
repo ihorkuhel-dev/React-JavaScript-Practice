@@ -99,7 +99,7 @@ export default function ClientCard() {
     return (
         <>
             <PageHeader pageName="Customer information" id={id} />
-            <div className="page-content client">
+            <div className="page-content client-page">
                 <div className="client-information">
                     <InfoCard data={personalData} title="Customer information" editAble={true} />
                     <InfoCard data={contactDetails} title="Master contact detail" editAble={true} />
