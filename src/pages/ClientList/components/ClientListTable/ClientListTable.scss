@@ -19,9 +19,9 @@
   & tr{
     transition: 0.3s;
     border-bottom: 1px solid var(--stroke-color);
-    cursor: pointer;
 
     & th{
+      cursor: pointer;
       text-wrap-mode: nowrap;
     }
   }
