@@ -1,50 +1,62 @@
-.product-detail-block{
-  grid-area: 1 / 2 / 5 / 4;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+.product-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  & .product-detail-block{
+    grid-area: 1 / 2 / 5 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 
-  & .reviews-block{
-    background-color: var(--background-color--accent);
+    & .reviews-block{
+      background-color: var(--background-color--accent);
 
-    & .reviews{
-      padding: var(--padding-card-large);
-      display: flex;
-      gap: var(--gap-m);
-      flex-direction: column;
-      
-      & .reviews-count{
-        color: var(--accent-color);
-      }
+      & .reviews{
+        padding: var(--padding-card-large);
+        display: flex;
+        gap: var(--gap-m);
+        flex-direction: column;
 
-      & .review-block{
-        background: var(--background-color);
-        border-radius: var(--border-radius-l);
-        padding: var(--padding-table-cell);
-
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: var(--gap-s);
-
-        & .comment{
-          grid-column: span 2 / span 2;
+        & .reviews-count{
+          color: var(--accent-color);
         }
 
-        & .review-data{
-          grid-row-start: 2;
-          color: var(--text-color--light);
-        }
+        & .review-block{
+          background: var(--background-color);
+          border-radius: var(--border-radius-l);
+          padding: var(--padding-table-cell);
 
-        & .review-rating{
-          grid-row-start: 2;
-          text-align: right;
-          color: var(--text-color--light);
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: var(--gap-s);
+
+          & .comment{
+            grid-column: span 2 / span 2;
+          }
+
+          & .review-data{
+            grid-row-start: 2;
+            color: var(--text-color--light);
+          }
+
+          & .review-rating{
+            grid-row-start: 2;
+            text-align: right;
+            color: var(--text-color--light);
+          }
         }
       }
     }
   }
+  & .product-detail-info{
+    grid-area: 1 / 1 / 3 / 2;
+  }
 }
-.product-detail-info{
-  grid-area: 1 / 1 / 3 / 2;
+
+@media screen and (max-width: 1300px) {
+  .product-page{
+    grid-template-columns: auto;
+    gap: 40px;
+  }
 }
