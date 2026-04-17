@@ -7,20 +7,21 @@
   }
   & .ui-tools{
     display: flex;
-    gap: 40px;
+    gap: var(--gap-dashboard-control);
+    flex-wrap: wrap;
+    row-gap: 0;
     align-content: center;
-    justify-content: center;
+    justify-content: flex-end;
     font-size: var(--font-size--text);
     color: var(--text-color--light);
-
     & .plan-complete-difference{
       display: flex;
-      gap: 30px;
+      gap:var(--gap-dashboard-controls);
       color: var(--text-color);
       & span{
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: var(--gap-xs);
         &::before{
           content: "\2022";
           font-size: var(--font-size--categories);

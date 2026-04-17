@@ -2,7 +2,7 @@ import PageHeader from "../../shared/ui/PageHeader/PageHeader";
 import CategoryCards from "./components/CategoryCards/CategoryCards";
 import RegionSales from "./components/RegionSales/RegionSales";
 import LostOpportunity from "./components/LostOpportunity/LostOpportunity";
-import "./Dashboad.scss"
+import "./Dashboard.scss"
 import {CATEGORY_STATS, SALES_BY_REGION} from "./data/dashboardMock";
 import BudgetChart from "./components/BudgetChart/BudgetChart";
 export default function Dashboard() {

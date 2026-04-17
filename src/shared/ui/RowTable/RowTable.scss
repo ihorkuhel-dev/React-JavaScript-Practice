@@ -2,23 +2,16 @@
   width: 100%;
   max-width: stretch;
   border-collapse: collapse;
-
   & tr {
     transition: 0.3s;
     border-bottom: 1px solid var(--stroke-color);
-
     &:hover{
       background-color: var(--background-color);
     }
-
-    & th, td {
+    & th,& td {
       text-transform: capitalize;
       text-align: left;
-      padding: 12px 16px;
+      padding: var(--padding-block-header);
     }
   }
-}
-th, td {
-  text-align: left;
-  padding: 12px 16px;
 }
