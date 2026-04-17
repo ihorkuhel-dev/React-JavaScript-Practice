@@ -105,7 +105,7 @@ export default function BudgetChart() {
             activePeriod={activePeriod}
             setActivePeriod={setActivePeriod}
         />
-            <div style={{  width: '100%', maxHeight: '100%', height: '100%' }}>
+            <div style={{ position: 'relative', width: '100%', height: 'stretch' }}>
                 <canvas ref={canvasRef} />
             </div>
 

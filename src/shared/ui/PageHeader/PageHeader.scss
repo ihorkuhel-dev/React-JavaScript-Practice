@@ -2,13 +2,13 @@
   background-color: var(--background-color--accent);
   color: var(--accent-color);
   width: 100%;
-  padding: var(--padding-page-header);
-  border-radius: 0 0 var(--border-radius-l) var(--border-radius-l);
+  padding: 30px;
+  border-radius: 0 0 10px 10px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--gap-header-page);
+  gap: 20px;
 
   &.layout-top {
     flex-direction: row;
@@ -24,21 +24,23 @@
   &__info {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-xs);
+    gap: 8px;
   }
 
   &__title {
     font-size: var(--font-size--page-title);
+    margin: 0;
   }
 
   &__subtitle {
-    font-size: var(--font-size--p);
+    margin: 0;
+    font-size: var(--font-size--p, 16px);
     color: var(--text-color);
   }
 
   &__controls {
     display: flex;
+    gap: 12px;
     align-items: center;
-    gap: var(--gap-button-group);
   }
 }

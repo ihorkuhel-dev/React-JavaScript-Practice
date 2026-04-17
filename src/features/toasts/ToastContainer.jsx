@@ -1,8 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
+import Toast from "../../shared/ui/Toast/Toast";
 import {removeToast} from "./toastsSlice";
 import './ToastContainer.scss'
 import {useCallback} from "react";
-import Toast from "./Toast/Toast";
 
 
 export default function ToastContainer() {
