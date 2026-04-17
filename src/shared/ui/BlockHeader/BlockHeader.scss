@@ -3,11 +3,11 @@
   display: flex;
   align-items: center;
   background-color: var(--accent-color);
-  color: var(--text-color--white);
+  color: var(--background-color--accent);
   font-size: var(--font-size--page-title);
-  padding: var(--padding-card);
-  border-radius: var(--border-radius-l);
-  gap: var(--gap-header-page);
+  padding: 20px;
+  border-radius: 10px;
+  gap: 20px;
   &.review-header{
     background-color: var(--accent-color--lighter);
   }

@@ -12,17 +12,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-m);
+  gap: 20px;
   width: 100%;
   max-width: 600px;
 
   & .welcome-message{
     text-align: center;
     margin-bottom: 10px;
+
     & h2{
       font-size: var(--font-size--page-title);
       color: var(--text-color);
       margin-bottom: 10px;
+
     }
     & p{
       font-size: var(--font-size--text);
@@ -34,14 +36,14 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: var(--gap-info-card);
+    gap: 30px;
   }
   .form-group {
     position: relative;
     &.button-group{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--gap-m);
+      gap: 20px;
       & .login-button{
         grid-area: 1 / 1 / 2 / 3;
       }

@@ -1,8 +1,8 @@
 .product-details{
   background: var(--background-color--accent);
-  border-radius: var(--border-radius-l);
+  border-radius: 10px;
   & .details {
-    margin: var(--padding-card-large);
+    margin: 30px;
     font-size: var(--font-size--p);
   }
   & ul{
@@ -12,13 +12,12 @@
     width: 100%;
     & li{
       font-size: var(--font-size--p);
-      font-weight: 600;
       text-transform: capitalize;
       cursor: pointer;
       width: 100%;
       text-align: center;
-      padding: var(--padding-category-button);
-      border-radius: var(--border-radius-l) var(--border-radius-l) 0 0;
+      padding: 20px 30px;
+      border-radius: 10px 10px 0 0;
       border: 1px solid transparent;
       border-bottom: 1px solid var(--accent-color--lighter);
       &.active{

@@ -2,6 +2,7 @@ import "./ProductDetails.scss"
 import {PRODUCT_DETAILS} from "../../../shared/config/ProductDetails";
 import {useSearchParams} from "react-router-dom";
 import RowTable from "../../../shared/ui/RowTable/RowTable";
+import ColumnTable from "../../../shared/ui/ColumnTable/ColumnTable";
 import ProductDescription from "../ProductDescription/ProductDescription";
 
 export default function ProductDetails({data}) {
@@ -17,8 +18,9 @@ export default function ProductDetails({data}) {
     const currentCategoryData = data.filter(item => item.category === currentCategory)[0]
 
     const Table = currentCategoryData?.direction === 'row' ?
-        <RowTable data={currentCategoryData} className="details"/> :
-        <ProductDescription data={currentCategoryData}  className="details"/>;
+        <RowTable data={currentCategoryData} className="details"/> :  currentCategoryData?.direction === 'column' ?
+            <ColumnTable data={currentCategoryData}  className="details"/> :
+            <ProductDescription data={currentCategoryData}  className="details"/>;
 
     return (
         <div className="product-details">
