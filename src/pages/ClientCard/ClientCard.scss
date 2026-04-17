@@ -1,16 +1,29 @@
-.client-information{
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  gap: 40px;
-}
-.client-details{
-  margin-top: auto;
-
-  height: 100%;
-  & .client-table-container{
+.client-page{
+  gap: var(--gap-xl);
+  & .client-information{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+    gap: var(--gap-xl);
   }
+  .client-details{
+    margin-top: auto;
+
+    height: 100%;
+    & .client-table-container{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+@media screen and (max-width: 1300px) {
+  .client-page {
+    gap: var(--gap-m);
+     & .client-information{
+      flex-direction: column;
+      gap: var(--gap-m);
+    }
+  }
+
 }
