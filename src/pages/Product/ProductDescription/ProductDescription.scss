@@ -2,16 +2,14 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-
   & .category{
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
     gap: 20px;
-
     & .category-description{
-      padding:20px 30px;
-      border-radius: 10px;
+      padding: var(--padding-card-large);
+      border-radius: var(--border-radius-l);
       background: var(--background-color);
     }
   }

@@ -2,16 +2,14 @@
   width: 100%;
   background: var(--accent-color);
   border: none;
-  border-radius: 8px;
-  padding: 16px 24px;
-  color: white;
+  border-radius: var(--border-radius-m);
+  padding: var(--padding-button);
+  color: var(--text-color--white);
   font-size: var(--font-size--p);
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  margin-bottom: 24px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   box-shadow: var(--submit-button-box-shadow);
   &:hover {
     transform: translateY(-2px);
@@ -26,29 +24,23 @@
     padding: 10px 15px;
     margin-bottom: 48px;
 
-    color: var(--background-color--accent);
     background: var(--accent-color--darker);
     box-shadow: var(--button-box-shadow);
-    &:hover {
-      transform:initial;
-    }
-    &:active {
+    &:hover, &:active {
       transform:initial;
     }
   }
   &.header-button{
     font-size: var(--font-size--p);
-    padding: 8px;
-    margin: 0;
-    width: stretch;
+    padding: var(--padding-button-small);
+    min-width: max-content;
     text-transform: initial;
   }
   &.transparent{
     font-size: var(--font-size--text);
     width: initial;
     text-transform: initial;
-    margin: 0;
-    padding: 8px 16px;
+    padding: var(--padding-button-small);
     background: transparent;
     color: var(--text-color--light);
     box-shadow: initial;
@@ -86,14 +78,15 @@
   }
   &.nav-button{
     background: transparent;
-    padding: 10px 40px;
+    padding: var(--padding-category-button);
+    border-radius: 0;
     width: max-content;
     height: fit-content;
     border: none;
     box-shadow: none;
     & svg{
-      width: 30px;
-      height: 30px;
+      width: var(--icon-size);
+      height: var(--icon-size);
     }
     &:hover, &:active{
       transform:initial;

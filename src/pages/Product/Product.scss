@@ -8,9 +8,9 @@
     background-color: var(--background-color--accent);
 
     & .reviews{
-      padding: 30px 20px;
+      padding: var(--padding-card-large);
       display: flex;
-      gap: 20px;
+      gap: var(--gap-m);
       flex-direction: column;
       
       & .reviews-count{
@@ -19,13 +19,13 @@
 
       & .review-block{
         background: var(--background-color);
-        border-radius: 10px;
-        padding: 10px 20px;
+        border-radius: var(--border-radius-l);
+        padding: var(--padding-table-cell);
 
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        gap: 16px;
+        gap: var(--gap-s);
 
         & .comment{
           grid-column: span 2 / span 2;

@@ -2,14 +2,12 @@
   display: grid;
   grid-template-columns: 4fr 3fr;
   grid-template-rows: 1fr auto;
-  gap: 20px;
+  gap: var(--gap-dashboard);
   grid-template-areas:
     "block1 block3"
     "block2 block3";
-
   width: 100%;
   height: 100%;
-
   & h3{
     font-size: var(--font-size--categories);
     margin-bottom: 20px;
@@ -17,28 +15,26 @@
 
   & .dashboard--chart{
     background-color: var(--background-color--accent);
-    border-radius: 10px;
+    border-radius: var(--border-radius-l);
+    padding: var(--padding-card);
     grid-area: block1;
     height: 100%;
-    padding: 20px;
   }
   & .dashboard--category{
     grid-area: block2;
     display: grid;
     align-items: center;
     height: fit-content;
-    gap: 20px;
+    gap: var(--gap-dashboard);
     grid-template-columns: repeat(3, 1fr);
   }
   & .dashboard--stats{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    padding: 20px;
+    padding: var(--padding-card);
     background-color: var(--background-color--accent);
+    border-radius: var(--border-radius-l);
     grid-area: block3;
-    border-radius: 10px;
-
   }
 }
