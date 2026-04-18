@@ -11,6 +11,8 @@ import ClientTable from "./ui/ClientTable/ClientTable";
 import TabsNav from "../../shared/ui/TabsNav/TabsNav";
 import { useClientCardData } from "./lib/useClientCardData";
 import {useSEO} from "../../shared/hooks/useSEO";
+import SkeletonInfoCard from "../../shared/ui/Skeleton/SkeletonInfoCard";
+import SkeletonTable from "../../shared/ui/Skeleton/SkeletonTable";
 
 export default function ClientCard() {
 
@@ -24,24 +26,36 @@ export default function ClientCard() {
 
     const { personalData, contactDetails, processedData } = useClientCardData(data);
 
-    if (isLoading) return <div>Loading client data...</div>;
     if (error) return <div>Error loading client information.</div>;
-    if (!data) return <div>Client not found.</div>;
+    if (!isLoading && !data) return <div>Client not found.</div>;
 
     return (
         <>
             <PageHeader pageName="Customer information" id={id} />
             <div className="page-content client-page">
                 <div className="client-information">
-                    <InfoCard data={personalData} title="Customer information" editAble={true} />
-                    <InfoCard data={contactDetails} title="Master contact detail" editAble={true} />
+                    {isLoading ? (
+                        <>
+                            <SkeletonInfoCard rows={6} />
+                            <SkeletonInfoCard rows={3} />
+                        </>
+                    ) : (
+                        <>
+                            <InfoCard data={personalData} title="Customer information" editAble={true} />
+                            <InfoCard data={contactDetails} title="Master contact detail" editAble={true} />
+                        </>
+                    )}
                 </div>
 
                 <div className="client-details">
                     <BlockHeader title="Description" Icon={<DescriptionIcon />} />
                     <div className="client-table-container">
                         <TabsNav tabs={TABLE_LABELS} paramName="tab" defaultTab={TABLE_LABELS[0].label} className="client-tabs" />
-                        <ClientTable tabData={processedData} activeTab={activeTab} />
+                        {isLoading ? (
+                            <SkeletonTable rows={1} columns={4} />
+                        ) : (
+                            <ClientTable tabData={processedData} activeTab={activeTab} />
+                        )}
                     </div>
                 </div>
             </div>
