@@ -1,5 +1,5 @@
-import {useState} from "react";
 import {useParams} from "react-router";
+import {useSearchParams} from "react-router-dom";
 import "./ClientCard.scss";
 import {useGetClientByIdQuery} from "../../features/clients/api/clientsApi";
 import DescriptionIcon from "../../shared/assets/DescriptionIcon";
@@ -8,23 +8,21 @@ import BlockHeader from "../../shared/ui/BlockHeader/BlockHeader";
 import InfoCard from "../../shared/ui/InfoCard/InfoCard";
 import PageHeader from "../../shared/ui/PageHeader/PageHeader";
 import ClientTable from "./ui/ClientTable/ClientTable";
-import SelectTable from "./ui/SelectTable/SelectTable";
+import TabsNav from "../../shared/ui/TabsNav/TabsNav";
 import { useClientCardData } from "./lib/useClientCardData";
 
 export default function ClientCard() {
     const { id } = useParams();
     const { data, isLoading, error } = useGetClientByIdQuery(id);
-    const [activeTab, setActiveTab] = useState(TABLE_LABELS[0].label);
+    const [searchParams] = useSearchParams();
+
+    const activeTab = searchParams.get('tab') || TABLE_LABELS[0].label;
 
     const { personalData, contactDetails, processedData } = useClientCardData(data);
 
     if (isLoading) return <div>Loading client data...</div>;
     if (error) return <div>Error loading client information.</div>;
     if (!data) return <div>Client not found.</div>;
-
-    const handleTabChange = (item) => {
-        setActiveTab(item.label);
-    };
 
     return (
         <>
@@ -38,7 +36,7 @@ export default function ClientCard() {
                 <div className="client-details">
                     <BlockHeader title="Description" Icon={<DescriptionIcon />} />
                     <div className="client-table-container">
-                        <SelectTable lables={TABLE_LABELS} activeTab={activeTab} onClick={handleTabChange} />
+                        <TabsNav tabs={TABLE_LABELS} paramName="tab" defaultTab={TABLE_LABELS[0].label} className="client-tabs" />
                         <ClientTable tabData={processedData} activeTab={activeTab} />
                     </div>
                 </div>

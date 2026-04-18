@@ -3,16 +3,12 @@ import {useSearchParams} from "react-router-dom";
 import {PRODUCT_DETAILS} from "../../../../shared/config/ProductDetails";
 import RowTable from "../../../../shared/ui/RowTable/RowTable";
 import ProductDescription from "../ProductDescription/ProductDescription";
+import TabsNav from "../../../../shared/ui/TabsNav/TabsNav";
 
 export default function ProductDetails({data}) {
 
-    const [searchParams, setSearchParams] = useSearchParams({'category': 'general'});
-    const currentCategory = searchParams.get('category') || 0
-
-    const setInfoCategory = (category) => {
-        searchParams.set('category', category);
-        setSearchParams(searchParams);
-    }
+    const [searchParams] = useSearchParams({'category': 'general'});
+    const currentCategory = searchParams.get('category') || 'general';
 
     const currentCategoryData = data.filter(item => item.category === currentCategory)[0]
 
@@ -22,25 +18,14 @@ export default function ProductDetails({data}) {
 
     return (
         <div className="product-details">
-            <nav>
-                <ul>
-                    {PRODUCT_DETAILS.map((item) => (
-                        <li key={item.id}
-                            className={item.label === searchParams.get('category') ? 'active' : ''}
-                            onClick={() => setInfoCategory(item.label)}>
-                            {item.label}
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-                {!currentCategoryData ? (
-                        <div className="details">
-                            <p>No info</p>
-                        </div>
-                ) :
-                    Table
-                }
-
+            <TabsNav tabs={PRODUCT_DETAILS} paramName="category" defaultTab="general" className="product-tabs" />
+            {!currentCategoryData ? (
+                    <div className="details">
+                        <p>No info</p>
+                    </div>
+            ) :
+                Table
+            }
         </div>
     )
 }
