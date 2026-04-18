@@ -11,7 +11,6 @@ export default function RightNavPanel() {
 
     const userName = ( user?.name ) ?? 'User'
 
-    console.log(userName)
     return (
         <>
             {NAV_BUTTONS.map((btn) => {

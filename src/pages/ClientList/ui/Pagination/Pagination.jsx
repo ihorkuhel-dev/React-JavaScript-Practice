@@ -37,6 +37,7 @@ export default function Pagination(props) {
                 className="pagination-btn transparent"
                 disabled={currentPage <= 1}
                 onClick={() => handlePageChange(currentPage-1)}
+                ariaLabel="Previous page"
             >🡐</Button>
             <span className="pagination-info">
                  {currentPage} ... {totalPages}
@@ -45,6 +46,7 @@ export default function Pagination(props) {
                 className="pagination-btn transparent"
                 disabled={currentPage===totalPages}
                 onClick={() => handlePageChange(currentPage+1)}
+                ariaLabel="Next page"
             >🡒</Button>
         </div>
     );

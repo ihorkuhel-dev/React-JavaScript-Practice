@@ -15,6 +15,7 @@ export default function Button({ as = 'button', children, ...rest }) {
         target,
 
         title,
+        ariaLabel,
 
         onClick,
         className = ''
@@ -35,6 +36,7 @@ export default function Button({ as = 'button', children, ...rest }) {
             onClick={onClick}
 
             title={title}
+            aria-label={ariaLabel}
         >
             {children}
         </Tag>

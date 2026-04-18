@@ -16,6 +16,7 @@ export default function Input(props) {
         onChange,
         label,
         error,
+        ...restProps
     } = props
 
     const [showPassword, setShowPassword] = useState(false);
@@ -23,7 +24,7 @@ export default function Input(props) {
 
     return (
         <>
-            <div className={`input-wrapper ${type}-wrapper ${error && 'error-wrapper'} `}>
+            <div className={`input-wrapper ${type}-wrapper ${error ? 'error-wrapper' : ''} `}>
                 <input
                     type={inputType}
                     id={id}
@@ -34,6 +35,7 @@ export default function Input(props) {
                     autoComplete={autoComplete}
                     placeholder={placeholder}
                     className={`${value ? 'has-value' : ''} ${classList}`}
+                    {...restProps}
                 />
                 {label && (
                     <label htmlFor={id}>{label}</label>

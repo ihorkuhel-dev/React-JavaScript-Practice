@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {useEffect, Suspense} from "react";
 import {useDispatch} from "react-redux";
 import {Outlet} from "react-router-dom";
 import ToastContainer from "../../features/toasts/ToastContainer";
@@ -30,7 +30,9 @@ export default function MainLayout() {
                 <HamburgerMenu/>
                 )}
             <main>
-                <Outlet />
+                <Suspense fallback={<div>Loading page...</div>}>
+                    <Outlet />
+                </Suspense>
             </main>
             {!isMobile &&  <SideNavigation type="user-panel" />}
             <ToastContainer/>

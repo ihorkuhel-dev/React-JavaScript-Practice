@@ -71,6 +71,16 @@ export default function ClientTable(props) {
         );
     }
 
+    const handleCellChange = React.useCallback((e) => {
+        const rowId = e.currentTarget.dataset.rowid;
+        const colKey = e.currentTarget.dataset.colkey;
+        if (rowId && colKey) {
+            // Need to convert rowId back to number if it was number
+            const numericId = isNaN(Number(rowId)) ? rowId : Number(rowId);
+            updateFieldById(numericId, colKey, e.target.value);
+        }
+    }, [updateFieldById]);
+
     return (
         <div className="overflow-x-wrap">
             <table className="table-client">
@@ -94,7 +104,9 @@ export default function ClientTable(props) {
                                     id={`${col.key}-input`}
                                     placeholder={col.placeholder}
                                     value={row[col.key] || ''}
-                                    onChange={(e) => handleInputChange(row.id, col.key, e.target.value)}
+                                    data-rowid={row.id}
+                                    data-colkey={col.key}
+                                    onChange={handleCellChange}
                                     required={false}
                                 />
                             </div>

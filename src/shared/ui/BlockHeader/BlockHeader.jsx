@@ -11,7 +11,7 @@ export default function BlockHeader(props) {
     return (
         <div className={`block-header ${className}`}>
             {Icon && (Icon)}
-            <h4>{title}</h4>
+            <h3>{title}</h3>
         </div>
     )
 }

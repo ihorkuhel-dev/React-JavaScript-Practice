@@ -1,5 +1,5 @@
 import "./HamburgerMenu.scss"
-import {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState, memo} from "react";
 import {useSelector} from "react-redux";
 import {NavLink} from "react-router";
 import {selectUser} from "../../../../features/user/model/userSlice";
@@ -8,7 +8,7 @@ import {NAV_BUTTONS, NAV_LINKS} from "../../../../shared/config/navigation";
 import Button from "../../../../shared/ui/Button/Button";
 import {useMenuAction} from "../../hooks/useMenuAction";
 
-export default function HamburgerMenu() {
+const HamburgerMenu = memo(function HamburgerMenu() {
 
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
@@ -52,6 +52,7 @@ export default function HamburgerMenu() {
                 type="button"
                 className={`hamburger-menu__toggle ${isOpen ? "is-open" : ""}`}
                 onClick={() => setIsOpen(!isOpen)}
+                ariaLabel="Toggle Menu"
                 >
                     <span className="toggle-line"/>
                     <span className="toggle-line"/>
@@ -80,4 +81,6 @@ export default function HamburgerMenu() {
                 </nav>
             </div>
     )
-}
+});
+
+export default HamburgerMenu;
