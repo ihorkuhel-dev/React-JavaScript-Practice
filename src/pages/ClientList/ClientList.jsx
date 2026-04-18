@@ -1,18 +1,12 @@
-import {useSearchParams} from "react-router-dom";
 import {useGetClientsQuery} from "../../features/clients/api/clientsApi";
 import PageHeader from "../../shared/ui/PageHeader/PageHeader";
-import ClientListTable from "./components/ClientListTable/ClientListTable";
-import Pagination from "./components/Pagination/Pagination";
+import ClientListTable from "./ui/ClientListTable/ClientListTable";
+import Pagination from "./ui/Pagination/Pagination";
+import { useClientListParams } from "./lib/useClientListParams";
 
 export default function ClientList() {
 
-    let [searchParams] = useSearchParams();
-
-    const currentPage = Number(searchParams.get('page')) || 1;
-    const currentLimit = Number(searchParams.get('limit')) || 10;
-    const currentSortBy = searchParams.get('sortBy') || '';
-    const currentOrder = searchParams.get('order') || 'asc';
-    const skipCount = (currentPage - 1) * currentLimit;
+    const { currentPage, currentLimit, currentSortBy, currentOrder, skipCount } = useClientListParams();
 
     const { data, isLoading } = useGetClientsQuery({
         limit: currentLimit,
@@ -23,6 +17,7 @@ export default function ClientList() {
 
     const clients = data?.users || [];
     const totalClients = data?.total || 0;
+    
     return (
         <>
             <PageHeader pageName="Customers">
@@ -31,7 +26,6 @@ export default function ClientList() {
                 <ClientListTable clients={clients} isLoading={isLoading}/>
                 <Pagination currentLimit={currentLimit} currentPage={currentPage} totalClients={totalClients}/>
             </div>
-
         </>
     )
 }

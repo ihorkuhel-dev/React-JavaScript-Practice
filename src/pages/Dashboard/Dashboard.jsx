@@ -1,15 +1,16 @@
 import PageHeader from "../../shared/ui/PageHeader/PageHeader";
-import BudgetChart from "./components/BudgetChart/BudgetChart";
-import CategoryCards from "./components/CategoryCards/CategoryCards";
-import LostOpportunity from "./components/LostOpportunity/LostOpportunity";
+import BudgetChart from "./ui/BudgetChart/BudgetChart";
+import CategoryCards from "./ui/CategoryCards/CategoryCards";
+import LostOpportunity from "./ui/LostOpportunity/LostOpportunity";
 import "./Dashboard.scss"
-import RegionSales from "./components/RegionSales/RegionSales";
+import RegionSales from "./ui/RegionSales/RegionSales";
 import {CATEGORY_STATS, SALES_BY_REGION} from "./data/dashboardMock";
+import {calculateMaxSales} from "./lib/calculateMaxSales";
 
 export default function Dashboard() {
 
 
-    const maxSales = Math.max(...SALES_BY_REGION.map(item => item.sales)) || 0;
+    const maxSales = calculateMaxSales(SALES_BY_REGION);
 
     return (
         <>

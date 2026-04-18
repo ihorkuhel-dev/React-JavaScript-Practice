@@ -1,26 +1,20 @@
-import {Chart} from "chart.js/auto";
-import {useEffect, useRef, useState} from "react";
-import {TOTAL_BUDGET_DATA} from "../../data/dashboardMock";
-import BudgetChartHeader from "../BudgetChartHeader/BudgetChartHeader";
+import { useEffect, useRef } from "react";
+import { Chart } from "chart.js/auto";
 
-export default function BudgetChart() {
-
-    const [activePeriod, setActivePeriod] = useState('day');
-
+export const useBudgetChart = (currentData) => {
     const canvasRef = useRef(null);
     const chartInstance = useRef(null);
 
-    const rootStyles = getComputedStyle(document.documentElement);
-
-    const colorPlan = rootStyles.getPropertyValue('--accent-color--lighter').trim();
-    const colorActual = rootStyles.getPropertyValue('--accent-color').trim();
-
-    const currentData = TOTAL_BUDGET_DATA[activePeriod];
-
     useEffect(() => {
-        if(chartInstance.current) {
+        if (!canvasRef.current || !currentData) return;
+
+        if (chartInstance.current) {
             chartInstance.current.destroy();
         }
+
+        const rootStyles = getComputedStyle(document.documentElement);
+        const colorPlan = rootStyles.getPropertyValue('--accent-color--lighter').trim();
+        const colorActual = rootStyles.getPropertyValue('--accent-color').trim();
 
         const ctx = canvasRef.current.getContext("2d");
 
@@ -87,28 +81,18 @@ export default function BudgetChart() {
                         ticks:{
                             stepSize: 10000,
                             padding: 10,
-
                         }
                     }
                 }
             }
-        })
+        });
+
         return () => {
             if (chartInstance.current) {
                 chartInstance.current.destroy();
             }
         };
-    }, [activePeriod])
-    return(
-        <>
-        <BudgetChartHeader
-            activePeriod={activePeriod}
-            setActivePeriod={setActivePeriod}
-        />
-            <div style={{  width: '100%', maxHeight: '100%', height: '100%' }}>
-                <canvas ref={canvasRef} />
-            </div>
+    }, [currentData]);
 
-        </>
-    )
-}
+    return canvasRef;
+};

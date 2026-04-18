@@ -1,0 +1,8 @@
+.product-details{
+  background: var(--background-color--accent);
+  border-radius: var(--border-radius-l);
+  & .details {
+    margin: var(--padding-card-large);
+    font-size: var(--font-size--p);
+  }
+}

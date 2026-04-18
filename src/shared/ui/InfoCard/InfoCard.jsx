@@ -1,43 +1,32 @@
 import "./InfoCard.scss"
-import {useEffect, useState} from "react";
 import EditIcon from "../../assets/EditIcon";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
-
+import { useEditableData } from "../../hooks/useEditableData";
 
 export default function InfoCard({data, title, editAble, className = ''}) {
 
+    const {
+        localData,
+        activeEdit,
+        enableEdit,
+        disableEdit,
+        updateFieldByIndex,
+        discardChanges
+    } = useEditableData(data);
+
     if (!data) return null;
 
-    const [activeEdit, setActiveEdit] = useState(false);
-    const [localData, setLocalData] = useState([]);
-
-    useEffect(() => {
-        if (data)
-            setLocalData(data.map(item => ({...item})));
-    },[data])
-
-    const enableEdit = () => {
-        setActiveEdit(true);
-    }
-
-    const disableEdit = () => {
-        setActiveEdit(false);
-    }
-
-    const editLocalData = (id, value) => {
-        const newData= [...localData];
-        newData[id].value = value;
-        setLocalData(newData);
+    const editLocalData = (index, value) => {
+        updateFieldByIndex(index, 'value', value);
     }
 
     const applyChanges = () => {
-        disableEdit()
+        disableEdit();
     }
 
     const cancelChanges = () => {
-        setLocalData(data)
-        disableEdit()
+        discardChanges();
     }
 
     const handleSubmit = (e) => {

@@ -1,21 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './ClientTable.scss';
-import Button from "../../../shared/ui/Button/Button";
-import Input from "../../../shared/ui/Input/Input";
+import Button from "../../../../shared/ui/Button/Button";
+import Input from "../../../../shared/ui/Input/Input";
+import { useEditableData } from "../../../../shared/hooks/useEditableData";
 
 export default function ClientTable(props) {
     const { tabData, activeTab } = props;
     const currentTableData = tabData[activeTab];
 
-    const [localRows, setLocalRows] = useState([]);
-
-    useEffect(() => {
-        if (currentTableData && currentTableData.rows)
-            setLocalRows(currentTableData.rows);
-        else
-            setLocalRows([]);
-
-    }, [currentTableData, activeTab]);
+    const {
+        localData: localRows,
+        updateFieldById,
+        addRow,
+        removeLastRow,
+        commitChanges
+    } = useEditableData(currentTableData?.rows);
 
     if (!currentTableData) return <div>No data available</div>;
 
@@ -29,22 +28,19 @@ export default function ClientTable(props) {
         currentTableData.columns.forEach(col => {
             newRow[col.key] = '';
         });
-        setLocalRows([...localRows, newRow]);
+        addRow(newRow);
     };
 
     const handleRemoveRow = () => {
-        if (localRows.length > 0)
-            setLocalRows(localRows.slice(0, -1));
+        removeLastRow();
     };
 
     const handleSaveRow = () => {
-        setLocalRows(localRows.map(row => ({ ...row, isNew: false })));
+        commitChanges();
     };
 
     const handleInputChange = (id, key, value) => {
-        setLocalRows(localRows.map(row =>
-            row.id === id ? { ...row, [key]: value } : row
-        ));
+        updateFieldById(id, key, value);
     };
 
     const handleKeyDown = (e) => {
