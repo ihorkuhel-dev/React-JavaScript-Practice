@@ -2,6 +2,7 @@ import './ClientListTable.scss';
 import React, {useCallback} from "react";
 import {useNavigate} from "react-router";
 import {useSearchParams} from "react-router-dom";
+import SkeletonTable from "../../../../shared/ui/Skeleton/SkeletonTable";
 
 export default function ClientListTable(props) {
 
@@ -42,7 +43,7 @@ export default function ClientListTable(props) {
     }, [navigate]);
 
     if (isLoading)
-        return <div className="table-loader">Загрузка данных...</div>;
+        return <SkeletonTable rows={10} columns={6} />;
     if (!clients || clients.length === 0)
         return <div className="table-empty">Клиенты не найдены</div>;
 
