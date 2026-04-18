@@ -8,9 +8,9 @@ export default function ProductDescription({data, className}) {
 
                 {data.items.map(item => (
                     <div className="category" key={item.id}>
-                        <h6>
+                        <h4>
                             {item.label}
-                        </h6>
+                        </h4>
                         <p className="category-description">
                             {item.value}
                         </p>

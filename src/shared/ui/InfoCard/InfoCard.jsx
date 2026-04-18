@@ -37,7 +37,7 @@ export default function InfoCard({data, title, editAble, className = ''}) {
         if(editAble && !activeEdit){
             return (
                 <div className="tool-bar">
-                    <Button className="transparent" onClick={enableEdit}>
+                    <Button className="transparent" onClick={enableEdit} ariaLabel="edit">
                         <EditIcon/>
                     </Button>
                 </div>
@@ -45,10 +45,10 @@ export default function InfoCard({data, title, editAble, className = ''}) {
         } else if(editAble && activeEdit){
             return (
                 <div className="tool-bar">
-                    <Button className="transparent" onClick={applyChanges}>
+                    <Button className="transparent" onClick={applyChanges} ariaLabel="Apply changes">
                         Apply
                     </Button>
-                    <Button className="transparent" onClick={cancelChanges} type="submit">
+                    <Button className="transparent" onClick={cancelChanges} ariaLabel="Cancel changes">
                         Cancel
                     </Button>
                 </div>
@@ -60,10 +60,11 @@ export default function InfoCard({data, title, editAble, className = ''}) {
     return (
         <>
             {activeEdit ? (
-                    <form className={`info-card__list ${className}`} onSubmit={handleSubmit}>
+                <div className={`info-card__list ${className}`}>
+                    <form  onSubmit={handleSubmit}>
 
                         <div className="header">
-                            <h4>{title}</h4>
+                            <h2>{title}</h2>
                             <ToolBar/>
                         </div>
                         {localData.map((row, index) => (
@@ -73,20 +74,24 @@ export default function InfoCard({data, title, editAble, className = ''}) {
                             </div>
                         ))}
                     </form>
+                </div>
+
                 ) :
                 (
-                    <dl className={`info-card__list ${className}`}>
+                    <div className={`info-card__list ${className}`}>
                         <div className="header">
-                            <h4>{title}</h4>
+                            <h2>{title}</h2>
                             <ToolBar/>
                         </div>
-                        {localData.map((row, index) => (
-                            <div className="info-card__row" key={index}>
-                                <dt className="info-card__term">{row.label}</dt>
-                                <dd className="info-card__desc">{row.value}</dd>
-                            </div>
-                        ))}
-                    </dl>
+                        <dl >
+                            {localData.map((row, index) => (
+                                <div className="info-card__row" key={index}>
+                                    <dt className="info-card__term">{row.label}</dt>
+                                    <dd className="info-card__desc">{row.value}</dd>
+                                </div>
+                            ))}
+                        </dl>
+                    </div>
 
                 )}
         </>

@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { TABLE_LABELS } from "../../../shared/config/TableLables";
 import { formatAddress } from "../../../shared/utils/formatAddress";
 
 export const useClientCardData = (data) => {

@@ -9,7 +9,7 @@ export default function LeftNavPanel() {
     return (
         <>
             <li>
-                <Button className='expand-button' aria-label="Свернуть/Развернуть меню"> <RectangleIcon/> </Button>
+                <Button className='expand-button' ariaLabel="Expand menu"> <RectangleIcon/> </Button>
             </li>
             {NAV_LINKS.map((link) => {
                 const Icon = link.icon;

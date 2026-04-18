@@ -1,7 +1,11 @@
 import {Link} from "react-router-dom";
 import RegisterForm from "../../features/auth/ui/RegisterForm/RegisterForm";
+import {useSEO} from "../../shared/hooks/useSEO";
 
 export default function Register() {
+
+    useSEO({ title: 'Sign up | CRM', description: 'Create a new CRM account' });
+
     return (
 
         <div className="auth-page">

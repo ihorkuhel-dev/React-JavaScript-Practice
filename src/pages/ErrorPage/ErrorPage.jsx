@@ -1,6 +1,8 @@
 import {isRouteErrorResponse, useRouteError} from "react-router";
+import {useSEO} from "../../shared/hooks/useSEO";
 
 export default function ErrorPage() {
+    useSEO({ title: 'Error | CRM', description: 'Page not found or access denied' });
     const error = useRouteError()
     console.log(error)
     if(isRouteErrorResponse(error)) {

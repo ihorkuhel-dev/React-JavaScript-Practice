@@ -1,8 +1,9 @@
+import React, { memo } from 'react';
 import LeftNavPanel from "./LeftNavPanel";
 import RightNavPanel from "./RightNavPanel";
 import './SideNavigation.scss'
 
-export default function SideNavigation(props) {
+const SideNavigation = memo(function SideNavigation(props) {
 
     const {type} = props;
 
@@ -15,4 +16,6 @@ export default function SideNavigation(props) {
             </ul>
         </nav>
     )
-};
+});
+
+export default SideNavigation;
