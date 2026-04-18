@@ -7,8 +7,12 @@ const userSlice = createSlice({
     },
     reducers: {
         setUserInfo: (state, action) => {
-            const { ...user} = action.payload;
-            state.user = user;
+            const user = action.payload;
+            const fullName = `${user.firstName || ""} ${user.lastName || ""}`.trim();
+            state.user = {
+                ...user,
+                name: fullName
+            };
         }
     }
 })

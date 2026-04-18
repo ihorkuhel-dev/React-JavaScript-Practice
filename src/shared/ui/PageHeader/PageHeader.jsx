@@ -1,9 +1,9 @@
 import './PageHeader.scss';
-import {PAGE_HEADER} from "../../config/pageTitle";
-import Select from "../Select/Select";
-import {addToast} from "../../../features/toasts/toastsSlice";
 import {useDispatch} from "react-redux";
+import {addToast} from "../../../features/toasts/toastsSlice";
+import {PAGE_HEADER} from "../../config/pageTitle";
 import Button from "../Button/Button";
+import Select from "../Select/Select";
 
 export default function PageHeader({ pageName, children, id }) {
     const dispatch = useDispatch();

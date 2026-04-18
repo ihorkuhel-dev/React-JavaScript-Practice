@@ -1,4 +1,4 @@
-import  './Input.scss';
+import './Input.scss';
 import {useState} from "react";
 import PasswordToggle from "../PasswordToggle/PasswordToggle";
 

@@ -1,6 +1,6 @@
 import './ClientListTable.scss';
-import { useSearchParams} from "react-router-dom";
-import { useNavigate} from "react-router";
+import {useNavigate} from "react-router";
+import {useSearchParams} from "react-router-dom";
 
 export default function ClientListTable(props) {
 

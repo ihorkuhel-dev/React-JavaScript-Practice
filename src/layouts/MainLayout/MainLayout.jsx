@@ -1,13 +1,13 @@
+import {useEffect} from "react";
+import {useDispatch} from "react-redux";
 import {Outlet} from "react-router-dom";
-import SideNavigation from "./SideNavigation/SideNavigation";
 import ToastContainer from "../../features/toasts/ToastContainer";
 import "./MainLayout.scss"
 import {useGetUserQuery} from "../../features/user/api/userApi";
-import {useDispatch} from "react-redux";
-import { setUserInfo} from "../../features/user/model/userSlice";
-import {useEffect} from "react";
+import {setUserInfo} from "../../features/user/model/userSlice";
 import {useMediaQuery} from "../../shared/hooks/useMediaQuery";
-import BurgerMenu from "./BurgerMenu/BurgerMenu";
+import HamburgerMenu from "./components/HamburgerMenu/HamburgerMenu";
+import SideNavigation from "./components/SideNavigation/SideNavigation";
 
 export default function MainLayout() {
 
@@ -15,6 +15,7 @@ export default function MainLayout() {
 
     const {data: userData, isSuccess: isSuccess} = useGetUserQuery();
     const isMobile = useMediaQuery('(max-width: 900px)');
+
     useEffect(() => {
         if (isSuccess && userData) {
             dispatch(setUserInfo(userData));
@@ -26,7 +27,7 @@ export default function MainLayout() {
             {!isMobile ? (
                 <SideNavigation type="navigation-panel" />
             ) : (
-                <BurgerMenu/>
+                <HamburgerMenu/>
                 )}
             <main>
                 <Outlet />

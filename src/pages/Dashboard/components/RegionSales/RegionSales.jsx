@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import "./RegionSales.scss"
 import {useAnimatedNumber} from "../../../../shared/hooks/useAnimatedNumber";
+
 export default  function RegionSales({region, maxSales}){
     const {
         title,

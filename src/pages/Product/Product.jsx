@@ -1,9 +1,9 @@
-import PageHeader from "../../shared/ui/PageHeader/PageHeader";
-import {useGetFirstProductQuery} from "../../features/products/api/productApi";
 import {useMemo} from "react";
+import {useGetFirstProductQuery} from "../../features/products/api/productApi";
+import BlockHeader from "../../shared/ui/BlockHeader/BlockHeader";
 import InfoCard from "../../shared/ui/InfoCard/InfoCard";
 import './Product.scss'
-import BlockHeader from "../../shared/ui/BlockHeader/BlockHeader";
+import PageHeader from "../../shared/ui/PageHeader/PageHeader";
 import ProductDetails from "./ProductDetails/ProductDetails";
 
 export default function Product() {

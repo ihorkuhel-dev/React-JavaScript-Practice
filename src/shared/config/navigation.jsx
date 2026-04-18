@@ -1,9 +1,9 @@
-import {ClientListIcon} from "../assets/ClientListIcon";
 import {CertificateIcon} from "../assets/CertificateIcon";
+import {ClientListIcon} from "../assets/ClientListIcon";
 import {DashboardIcon} from "../assets/DashboardIcon";
-import {SettingsIcon} from "../assets/SettingsIcon";
 import {InfoIcon} from "../assets/InfoIcon";
 import {LogOutIcon} from "../assets/LogOutIcon";
+import {SettingsIcon} from "../assets/SettingsIcon";
 import {UserIcon} from "../assets/UserIcon";
 
 export const NAV_LINKS = [
@@ -36,7 +36,7 @@ export const NAV_BUTTONS = [
     {
         id: 2,
         onClick: 'openSettings',
-        label: 'Open Settings',
+        label: 'Settings',
         icon: SettingsIcon,
     },
     {

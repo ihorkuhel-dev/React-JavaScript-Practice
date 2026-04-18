@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { useAnimatedNumber } from "../../../../shared/hooks/useAnimatedNumber";
-import { LOST_OPPORTUNITY } from "../../data/dashboardMock";
+import {useEffect, useState} from "react";
+import {useAnimatedNumber} from "../../../../shared/hooks/useAnimatedNumber";
+import {LOST_OPPORTUNITY} from "../../data/dashboardMock";
 import "./LostOpportunity.scss";
 
 export default function LostOpportunity() {

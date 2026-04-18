@@ -1,14 +1,14 @@
-import { useGetClientByIdQuery } from "../../features/clients/api/clientsApi";
-import PageHeader from "../../shared/ui/PageHeader/PageHeader";
-import BlockHeader from "../../shared/ui/BlockHeader/BlockHeader";
-import DescriptionIcon from "../../shared/assets/DescriptionIcon";
-import SelectTable from "./SelectTable/SelectTable";
-import ClientTable from "./ClientTable/ClientTable";
-import { TABLE_LABELS } from "../../shared/config/TableLables";
-import { useState, useMemo } from "react";
-import { useParams } from "react-router";
+import {useMemo, useState} from "react";
+import {useParams} from "react-router";
 import "./ClientCard.scss";
+import {useGetClientByIdQuery} from "../../features/clients/api/clientsApi";
+import DescriptionIcon from "../../shared/assets/DescriptionIcon";
+import {TABLE_LABELS} from "../../shared/config/TableLables";
+import BlockHeader from "../../shared/ui/BlockHeader/BlockHeader";
 import InfoCard from "../../shared/ui/InfoCard/InfoCard";
+import PageHeader from "../../shared/ui/PageHeader/PageHeader";
+import ClientTable from "./ClientTable/ClientTable";
+import SelectTable from "./SelectTable/SelectTable";
 
 const formatAddress = (addressObj) => {
     if (!addressObj) return "No address provided";

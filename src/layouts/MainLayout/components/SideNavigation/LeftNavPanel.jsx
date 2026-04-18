@@ -1,13 +1,11 @@
 import {NavLink} from "react-router";
+import {RectangleIcon} from "../../../../shared/assets/RectangleIcon";
 
-import {NAV_LINKS} from "../../../shared/config/navigation";
-import {RectangleIcon} from "../../../shared/assets/RectangleIcon";
-import Button from "../../../shared/ui/Button/Button";
+import {NAV_LINKS} from "../../../../shared/config/navigation";
+import Button from "../../../../shared/ui/Button/Button";
 
 
 export default function LeftNavPanel() {
-
-
     return (
         <>
             <li>
@@ -22,11 +20,8 @@ export default function LeftNavPanel() {
                                 to={link.path}
                                 aria-label={link.label}
                                 title={link.label}>
-                            {Icon && <Icon aria-hidden="true"/>}
+                            {Icon && <Icon aria-hidden="true" color="white" />}
                         </Button>
-                        {/*<NavLink className="nav-button" to={link.path} aria-label={link.label} title={link.label}>*/}
-                        {/*    {Icon && <Icon aria-hidden="true"/>}*/}
-                        {/*</NavLink>*/}
                     </li>
 
                 );
