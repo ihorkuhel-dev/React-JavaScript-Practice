@@ -6,9 +6,11 @@ import "./Dashboard.scss"
 import RegionSales from "./ui/RegionSales/RegionSales";
 import {CATEGORY_STATS, SALES_BY_REGION} from "./data/dashboardMock";
 import {calculateMaxSales} from "./lib/calculateMaxSales";
+import {useSEO} from "../../shared/hooks/useSEO";
 
 export default function Dashboard() {
 
+    useSEO({ title: 'Dashboard | CRM', description: 'Main analytics and general clinic statistics' });
 
     const maxSales = calculateMaxSales(SALES_BY_REGION);
 

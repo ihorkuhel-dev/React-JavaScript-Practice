@@ -5,8 +5,11 @@ import PageHeader from "../../shared/ui/PageHeader/PageHeader";
 import ProductDetails from "./ui/ProductDetails/ProductDetails";
 import ProductReviews from "./ui/ProductReviews/ProductReviews";
 import { useProductData } from "./lib/useProductData";
+import {useSEO} from "../../shared/hooks/useSEO";
 
 export default function Product() {
+
+    useSEO({ title: 'Product | CRM', description: 'Product management and details' });
 
     const { data } = useGetFirstProductQuery();
     const { info, reviews, productDetails } = useProductData(data);

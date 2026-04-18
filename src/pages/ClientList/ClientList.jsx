@@ -3,8 +3,11 @@ import PageHeader from "../../shared/ui/PageHeader/PageHeader";
 import ClientListTable from "./ui/ClientListTable/ClientListTable";
 import Pagination from "./ui/Pagination/Pagination";
 import { useClientListParams } from "./lib/useClientListParams";
+import {useSEO} from "../../shared/hooks/useSEO";
 
 export default function ClientList() {
+
+    useSEO({ title: 'Clients | CRM', description: 'List of all clinic patients' });
 
     const { currentPage, currentLimit, currentSortBy, currentOrder, skipCount } = useClientListParams();
 

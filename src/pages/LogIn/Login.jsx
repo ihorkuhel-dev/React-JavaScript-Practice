@@ -1,7 +1,10 @@
 import {Link} from "react-router-dom";
 import LoginForm from "../../features/auth/ui/LoginForm/LoginForm";
+import {useSEO} from "../../shared/hooks/useSEO";
 
 export default function LogIn() {
+    useSEO({ title: 'Log in | CRM', description: 'Sign in to your CRM account' });
+
     return (
             <div className="auth-page">
                 <div className="welcome-message">

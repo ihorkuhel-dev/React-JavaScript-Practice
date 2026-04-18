@@ -10,8 +10,12 @@ import PageHeader from "../../shared/ui/PageHeader/PageHeader";
 import ClientTable from "./ui/ClientTable/ClientTable";
 import TabsNav from "../../shared/ui/TabsNav/TabsNav";
 import { useClientCardData } from "./lib/useClientCardData";
+import {useSEO} from "../../shared/hooks/useSEO";
 
 export default function ClientCard() {
+
+    useSEO({ title: 'Customer Profile | CRM', description: 'Detailed customer information and appointment history' });
+
     const { id } = useParams();
     const { data, isLoading, error } = useGetClientByIdQuery(id);
     const [searchParams] = useSearchParams();
