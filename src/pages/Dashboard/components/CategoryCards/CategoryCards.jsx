@@ -1,5 +1,6 @@
 import "./CategoryCards.scss"
 import {useAnimatedNumber} from "../../../../shared/hooks/useAnimatedNumber";
+
 export default function CategoryCards({category}) {
     const {
         title,

@@ -1,4 +1,5 @@
 import "./Button.scss"
+
 export default function Button({ as = 'button', children, ...rest }) {
 
     const Tag = as;

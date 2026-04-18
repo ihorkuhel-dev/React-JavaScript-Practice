@@ -1,6 +1,6 @@
 import "./ProductDetails.scss"
-import {PRODUCT_DETAILS} from "../../../shared/config/ProductDetails";
 import {useSearchParams} from "react-router-dom";
+import {PRODUCT_DETAILS} from "../../../shared/config/ProductDetails";
 import RowTable from "../../../shared/ui/RowTable/RowTable";
 import ProductDescription from "../ProductDescription/ProductDescription";
 

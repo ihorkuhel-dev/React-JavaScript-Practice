@@ -1,14 +1,14 @@
+import Cookies from "js-cookie";
 import {createBrowserRouter, redirect} from "react-router-dom";
 import AuthLayout from "../layouts/AuthLayout/AuthLayout";
-import LogIn from "../pages/LogIn/Login";
-import Register from "../pages/Register/Register";
 import MainLayout from "../layouts/MainLayout/MainLayout";
-import ClientList from "../pages/ClientList/ClientList";
 import ClientCard from "../pages/ClientCard/ClientCard";
-import Product from "../pages/Product/Product";
+import ClientList from "../pages/ClientList/ClientList";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import Cookies from "js-cookie";
+import LogIn from "../pages/LogIn/Login";
+import Product from "../pages/Product/Product";
+import Register from "../pages/Register/Register";
 
 const checkAuth = () => {
     return !!Cookies.get('token')

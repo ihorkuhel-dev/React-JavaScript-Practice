@@ -1,11 +1,11 @@
-import { useState} from "react";
+import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router";
-import {setCredentials} from "../../model/authSlice";
-import { rules, validateField} from "../../../../shared/utils/validators";
-import {useLoginMutation} from "../../api/authApi";
-import Input from "../../../../shared/ui/Input/Input";
 import Button from "../../../../shared/ui/Button/Button";
+import Input from "../../../../shared/ui/Input/Input";
+import {rules, validateField} from "../../../../shared/utils/validators";
+import {useLoginMutation} from "../../api/authApi";
+import {setCredentials} from "../../model/authSlice";
 
 
 export default function LoginForm () {

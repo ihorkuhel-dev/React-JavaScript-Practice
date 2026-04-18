@@ -1,7 +1,7 @@
 import "./InfoCard.scss"
 import {useEffect, useState} from "react";
-import Button from "../Button/Button";
 import EditIcon from "../../assets/EditIcon";
+import Button from "../Button/Button";
 import Input from "../Input/Input";
 
 

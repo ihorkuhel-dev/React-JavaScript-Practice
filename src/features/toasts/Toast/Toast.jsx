@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, memo } from 'react';
+import {memo, useEffect, useRef, useState} from 'react';
 import './Toast.scss';
 
 const Toast = memo((props) => {

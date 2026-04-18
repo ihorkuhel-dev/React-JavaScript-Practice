@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from 'react';
 import './Select.scss'
+
 export default function Select({ config, value, onChange }) {
     const [isOpen, setIsOpen] = useState(false);
     const selectRef = useRef(null);

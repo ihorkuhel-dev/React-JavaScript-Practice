@@ -1,4 +1,4 @@
-.product-page {
+.main-layout .product-page {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 20px;
@@ -55,8 +55,8 @@
 }
 
 @media screen and (max-width: 1300px) {
-  .product-page{
-    grid-template-columns: auto;
+  .main-layout .product-page{
+    display: flex;
     gap: 40px;
   }
 }

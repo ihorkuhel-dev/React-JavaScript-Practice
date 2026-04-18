@@ -1,9 +1,9 @@
 import {useState} from "react";
-import {rules, validateField} from "../../../../shared/utils/validators";
-import Input from "../../../../shared/ui/Input/Input";
 import Button from "../../../../shared/ui/Button/Button";
+import Input from "../../../../shared/ui/Input/Input";
+import {rules, validateField} from "../../../../shared/utils/validators";
 
-export default function RegisterForm (props) {
+export default function RegisterForm () {
 
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');

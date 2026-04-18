@@ -1,6 +1,7 @@
 import LeftNavPanel from "./LeftNavPanel";
 import RightNavPanel from "./RightNavPanel";
 import './SideNavigation.scss'
+
 export default function SideNavigation(props) {
 
     const {type} = props;

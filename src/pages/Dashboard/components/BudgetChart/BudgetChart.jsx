@@ -1,7 +1,7 @@
-import BudgetChartHeader from "../BudgetChartHeader/BudgetChartHeader";
-import {useEffect, useRef, useState} from "react";
 import {Chart} from "chart.js/auto";
+import {useEffect, useRef, useState} from "react";
 import {TOTAL_BUDGET_DATA} from "../../data/dashboardMock";
+import BudgetChartHeader from "../BudgetChartHeader/BudgetChartHeader";
 
 export default function BudgetChart() {
 

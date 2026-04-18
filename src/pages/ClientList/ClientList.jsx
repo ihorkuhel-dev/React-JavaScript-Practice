@@ -1,6 +1,6 @@
-import PageHeader from "../../shared/ui/PageHeader/PageHeader";
-import {useGetClientsQuery} from "../../features/clients/api/clientsApi";
 import {useSearchParams} from "react-router-dom";
+import {useGetClientsQuery} from "../../features/clients/api/clientsApi";
+import PageHeader from "../../shared/ui/PageHeader/PageHeader";
 import ClientListTable from "./components/ClientListTable/ClientListTable";
 import Pagination from "./components/Pagination/Pagination";
 
