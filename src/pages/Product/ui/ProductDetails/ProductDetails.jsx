@@ -1,7 +1,7 @@
 import "./ProductDetails.scss"
 import {useSearchParams} from "react-router-dom";
-import {PRODUCT_DETAILS} from "../../../shared/config/ProductDetails";
-import RowTable from "../../../shared/ui/RowTable/RowTable";
+import {PRODUCT_DETAILS} from "../../../../shared/config/ProductDetails";
+import RowTable from "../../../../shared/ui/RowTable/RowTable";
 import ProductDescription from "../ProductDescription/ProductDescription";
 
 export default function ProductDetails({data}) {

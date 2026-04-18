@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import './ClientTable.scss';
-import Button from "../../../shared/ui/Button/Button";
-import Input from "../../../shared/ui/Input/Input";
+import Button from "../../../../shared/ui/Button/Button";
+import Input from "../../../../shared/ui/Input/Input";
+
 
 export default function ClientTable(props) {
     const { tabData, activeTab } = props;
