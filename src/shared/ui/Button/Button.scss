@@ -21,7 +21,7 @@
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     width: fit-content;
-    padding: 10px 15px;
+    padding: var(--padding-input);
     margin-bottom: 48px;
 
     background: var(--accent-color--darker);
