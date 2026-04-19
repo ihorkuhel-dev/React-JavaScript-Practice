@@ -1,6 +1,6 @@
 .skeleton {
     display: block;
-    background-color: var(--color-background);
+    background-color: var(--color-background, #e2e8f0);
     position: relative;
     overflow: hidden;
 
