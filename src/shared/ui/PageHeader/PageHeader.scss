@@ -42,3 +42,19 @@
     gap: var(--gap-button-group);
   }
 }
+
+@media screen and ("max-width: 700px") {
+  .page-header {
+      &__controls{
+        flex-direction: column;
+      }
+    &.layout-top {
+      align-items: center;
+    }
+    &.layout-bottom {
+      & .page-header__controls{
+        flex-direction: row;
+      }
+    }
+  }
+}
