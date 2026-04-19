@@ -4,10 +4,16 @@
   color: var(--text-color);
   font-size: var(--font-size--p);
   border-collapse: collapse;
+  table-layout: fixed;
 
   & th, & td{
     border: 1px solid var(--accent-color--lighter);
     padding: 10px 20px;
+    height: 52px;
+  }
+
+  & td.editing-cell {
+    padding: 0;
   }
 }
 

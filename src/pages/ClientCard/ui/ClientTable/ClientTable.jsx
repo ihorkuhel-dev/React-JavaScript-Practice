@@ -71,7 +71,7 @@ export default function ClientTable(props) {
         );
     }
 
-    const handleCellChange = React.useCallback((e) => {
+    const handleCellChange = (e) => {
         const rowId = e.currentTarget.dataset.rowid;
         const colKey = e.currentTarget.dataset.colkey;
         if (rowId && colKey) {
@@ -79,7 +79,7 @@ export default function ClientTable(props) {
             const numericId = isNaN(Number(rowId)) ? rowId : Number(rowId);
             updateFieldById(numericId, colKey, e.target.value);
         }
-    }, [updateFieldById]);
+    };
 
     return (
         <div className="overflow-x-wrap">
@@ -96,7 +96,10 @@ export default function ClientTable(props) {
                 {localRows.map((row, index) => (
                     <tr key={row.id || `row-${index}`}>
                 {currentTableData.columns.map((col, colIndex) => (
-                    <td key={col.key || `col-${colIndex}`}>
+                    <td 
+                        key={col.key || `col-${colIndex}`} 
+                        className={row.isNew && col.placeholder ? 'editing-cell' : ''}
+                    >
                         {row.isNew && col.placeholder ? (
                             <div onKeyDown={handleKeyDown}>
                                 <Input
