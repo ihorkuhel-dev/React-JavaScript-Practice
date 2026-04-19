@@ -46,8 +46,14 @@ export const PAGE_HEADER = [
                     title: "Customize",
                     type: "select",
                     options: [
-                        { value: "edit", label: "Edit" },
-                        { value: "export", label: "Export" }
+                        { value: "Generate account statement", label: "Generate account statement" },
+                        { value: "Add sub offices", label: "Add sub offices" },
+                        { value: "Merge data", label: "Merge data" },
+                        { value: "Create login", label: "Create login" },
+                        { value: "Map rate plan", label: "Map rate plan" },
+                        { value: "Add follow-up", label: "Add follow-up" },
+                        { value: "Add payments", label: "Add payments" },
+                        { value: "Add referral code", label: "Add referral code" },
                     ],
                     className: "",
                 }

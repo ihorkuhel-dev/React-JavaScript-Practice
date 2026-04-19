@@ -32,14 +32,13 @@
   .select-dropdown {
     position: absolute;
     top: calc(100% + var(--select-arrow-size));
-    left: 0;
+    left: calc(-100% - 20px);
     right: 0;
     background-color: var(--background-color--accent);
     border: 1px solid var(--stroke-color);
     box-sizing: var(--button-box-shadow);
     border-radius: var(--select-arrow-size);
     z-index: 100;
-    width: fit-content;
     max-height: 240px;
     overflow-y: auto;
     padding: var(--padding-card-small) 0;
