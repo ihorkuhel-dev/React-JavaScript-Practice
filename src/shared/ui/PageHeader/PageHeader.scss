@@ -45,6 +45,7 @@
 
 @media screen and ("max-width: 700px") {
   .page-header {
+    flex-wrap: wrap;
       &__controls{
         flex-direction: column;
       }
