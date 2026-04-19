@@ -14,7 +14,8 @@ export default function RegisterForm () {
         handleLoginChange,
         handlePasswordChange,
         handleConfirmPasswordChange,
-        handleSubmit
+        handleSubmit,
+        isLoading
     } = useRegisterForm();
 
     return (
@@ -56,7 +57,9 @@ export default function RegisterForm () {
                 />
             </div>
             <div className="form-group">
-                <Button type="submit">Register</Button>
+                <Button type="submit" disabled={isLoading}>
+                    {isLoading ? 'Registering...' : 'Register'}
+                </Button>
             </div>
         </form>
     )
