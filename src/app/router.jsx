@@ -1,5 +1,5 @@
-import { lazy } from "react";
 import Cookies from "js-cookie";
+import {lazy} from "react";
 import {createBrowserRouter, redirect} from "react-router-dom";
 import AuthLayout from "../layouts/AuthLayout/AuthLayout";
 import MainLayout from "../layouts/MainLayout/MainLayout";

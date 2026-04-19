@@ -1,4 +1,4 @@
-import {useEffect, Suspense} from "react";
+import {Suspense, useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {Outlet} from "react-router-dom";
 import ToastContainer from "../../features/toasts/ToastContainer";
