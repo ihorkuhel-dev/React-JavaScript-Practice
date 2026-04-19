@@ -7,13 +7,14 @@
     gap: var(--gap-xl);
   }
   .client-details{
-    margin-top: auto;
-
-    height: 100%;
+    background: var(--text-color--white);
     & .client-table-container{
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      overflow: auto;
+      gap: var(--gap-m);
+      padding: 0 var(--padding-card) var(--padding-card) var(--padding-card);
+
     }
   }
 }

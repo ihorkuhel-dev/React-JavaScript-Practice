@@ -1,6 +1,6 @@
 .skeleton {
     display: block;
-    background-color: var(--color-background, #e2e8f0);
+    background-color: var(--color-background);
     position: relative;
     overflow: hidden;
 
@@ -25,12 +25,12 @@
 
 .skeleton--text {
     border-radius: 4px;
-    height: 1.2em; /* Default text height */
-    margin-bottom: 0.5rem;
+    height: 1.2em;
+  margin-bottom: 0.5rem;
 }
 
 .skeleton--rectangular {
-    border-radius: 8px; /* Slightly rounded corners for blocks */
+    border-radius: 8px;
 }
 
 .skeleton--circular {
