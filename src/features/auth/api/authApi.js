@@ -10,8 +10,16 @@ export const authApi = baseApi.injectEndpoints({
                 body: JSON.stringify({ ...credentials, expiresInMins: 1440 })
             }),
             invalidateTags: ['Auth']
+        }),
+        register: builder.mutation({
+            query: (userData) => ({
+                url: 'users/add',
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(userData)
+            })
         })
     })
 })
 
-export const { useLoginMutation } = authApi
+export const { useLoginMutation, useRegisterMutation } = authApi

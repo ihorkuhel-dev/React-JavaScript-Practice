@@ -1,7 +1,15 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
 import {rules, validateField} from "../../../shared/utils/validators";
+import {useRegisterMutation} from "../api/authApi";
+import {addToast} from "../../toasts/toastsSlice";
 
 export const useRegisterForm = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [register, { isLoading }] = useRegisterMutation();
+
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -36,10 +44,27 @@ export const useRegisterForm = () => {
         if (confirmPasswordError) setConfirmPasswordError('');
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if(validateFields())
-            console.log('Данные готовы к отправке:', { username: userName, password });
+        if(validateFields()) {
+            try {
+                const response = await register({
+                    username: userName,
+                    password: password
+                }).unwrap();
+
+                dispatch(addToast({
+                    type: 'success',
+                    message: `Registration successful for ${response.username}! Please login.`
+                }));
+                navigate('/login');
+            } catch (err) {
+                dispatch(addToast({
+                    type: 'error',
+                    message: "Registration failed. Please try again."
+                }));
+            }
+        }
     }
 
     return {
@@ -52,6 +77,7 @@ export const useRegisterForm = () => {
         handleLoginChange,
         handlePasswordChange,
         handleConfirmPasswordChange,
-        handleSubmit
+        handleSubmit,
+        isLoading
     }
 };

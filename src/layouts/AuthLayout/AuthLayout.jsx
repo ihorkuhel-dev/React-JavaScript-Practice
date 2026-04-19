@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import {Outlet} from "react-router-dom";
+import ToastContainer from "../../features/toasts/ToastContainer";
 import './AuthLayout.scss'
 
 export default function AuthLayout() {
@@ -9,6 +10,7 @@ export default function AuthLayout() {
             <Suspense fallback={<div>Loading...</div>}>
                 <Outlet />
             </Suspense>
+            <ToastContainer />
         </div>
     )
 }
