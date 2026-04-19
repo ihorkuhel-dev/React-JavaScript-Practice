@@ -80,3 +80,89 @@
 
     --padding-input: 10px 15px;
 }
+
+@media (max-width: 1300px) {
+    :root {
+        --font-size--page-title: 30px;
+        --font-size--stats: 36px;
+        
+        --gap-xl: 36px;
+        --gap-dashboard-control: 56px;
+        
+        --padding-side-nav: 40px 0;
+        --padding-side-nav-items: 15px 25px;
+        --padding-card-large: 26px;
+        --padding-dashboard-block-large: 26px;
+        --padding-page-header: 35px 20px 15px 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --font-size--p: 18px;
+        --font-size--sub-categories: 20px;
+        --font-size--categories: 22px;
+        --font-size--page-title: 26px;
+        --font-size--stats: 30px;
+
+        --gap-info-card: 24px;
+        --gap-dashboard-block: 26px;
+        --gap-dashboard-control: 40px;
+        --gap-xl: 30px;
+
+        --padding-side-nav: 30px 0;
+        --padding-side-nav-items: 12px 20px;
+        --padding-card-large: 20px;
+        --padding-page-header: 25px 15px 15px 15px;
+        --padding-dashboard-block-large: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --font-size--text: 14px;
+        --font-size--p: 16px;
+        --font-size--sub-categories: 18px;
+        --font-size--categories: 20px;
+        --font-size--page-title: 22px;
+        --font-size--stats: 24px;
+
+        --gap-m: 16px;
+        --gap-xl: 20px;
+        --gap-info-card: 20px;
+        --gap-dashboard: 16px;
+        --gap-dashboard-block: 20px;
+        --gap-dashboard-control: 24px;
+        --gap-dashboard-controls: 16px;
+        --gap-header-page: 16px;
+
+        --padding-side-nav: 20px 0;
+        --padding-side-nav-items: 10px 16px;
+        --padding-card-large: 16px;
+        --padding-card: 16px;
+        --padding-page-header: 20px 10px 10px 10px;
+        --padding-dashboard-block: 16px;
+        --padding-dashboard-block-large: 16px;
+        --padding-button: 12px 20px;
+        --padding-table-cell: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size--page-title: 20px;
+        --font-size--stats: 20px;
+
+        --gap-info-card: 15px;
+        --gap-dashboard-control: 16px;
+        --gap-dashboard-block: 16px;
+
+        --padding-card-large: 12px;
+        --padding-card: 12px;
+        --padding-page-header: 15px 10px 10px 10px;
+        --padding-dashboard-block: 12px;
+        --padding-dashboard-block-large: 12px;
+        --padding-button: 10px 16px;
+    }
+}
+
