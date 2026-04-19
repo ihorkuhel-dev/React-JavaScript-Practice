@@ -7,7 +7,7 @@ export const authApi = baseApi.injectEndpoints({
                 url: 'auth/login',
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(credentials)
+                body: JSON.stringify({ ...credentials, expiresInMins: 1440 })
             }),
             invalidateTags: ['Auth']
         })
