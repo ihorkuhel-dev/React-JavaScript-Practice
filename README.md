@@ -4,8 +4,6 @@ This project is a React-based frontend application designed as a dashboard/CRM i
 
 ## Brief Functionality
 
-The application provides a comprehensive user interface for managing business data:
-
 *   **Authentication:** User login and registration flows with token management.
 *   **Dashboard:** A visual overview of key metrics using interactive charts (powered by Chart.js).
 *   **Client Management:** 
@@ -16,8 +14,6 @@ The application provides a comprehensive user interface for managing business da
 *   **Toast Notifications:** User feedback system for actions and errors.
 
 ## List of Dependencies
-
-The project relies on a modern JavaScript stack, built and bundled with Webpack 5.
 
 **Core Dependencies:**
 *   **React** (`^19.2.5`): UI library for building component-driven interfaces.
