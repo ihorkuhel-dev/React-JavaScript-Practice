@@ -1,0 +1,116 @@
+.ui-button {
+  width: 100%;
+  background: var(--accent-color);
+  border: none;
+  border-radius: var(--border-radius-m);
+  padding: var(--padding-button);
+  color: var(--text-color--white);
+  font-size: var(--font-size--p);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+  box-shadow: var(--submit-button-box-shadow);
+  &:hover {
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: scale(1.05);
+  }
+  &.expand-button{
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    width: fit-content;
+    padding: var(--padding-input);
+    margin-bottom: 48px;
+
+    background: var(--accent-color--darker);
+    box-shadow: var(--button-box-shadow);
+    &:hover, &:active {
+      transform:initial;
+    }
+  }
+  &.hamburger-menu__toggle{
+    width: fit-content;
+    background: var(--accent-color--darker);
+    aspect-ratio: 1 / 1;
+  }
+  &.header-button{
+    font-size: var(--font-size--p);
+    padding: var(--padding-button-small);
+    min-width: max-content;
+    text-transform: initial;
+  }
+  &.transparent{
+    font-size: var(--font-size--text);
+    width: initial;
+    text-transform: initial;
+    padding: var(--padding-button-small);
+    background: transparent;
+    color: var(--text-color--light);
+    box-shadow: initial;
+    &.active{
+      color: var(--accent-color);
+      &:hover{
+        color: var(--accent-color);
+      }
+    }
+    &:hover {
+      transform:initial;
+      color: var(--text-color);
+    }
+    &:active {
+      transform:initial;
+    }
+
+    &.pagination-btn{
+      color: var(--text-color);
+      font-size: var(--font-size--categories);
+      &:hover{
+        color: var(--accent-color);
+      }
+      &:disabled{
+        color: var(--text-color--light);
+      }
+    }
+  }
+  &.table-controls{
+    width: fit-content;
+    background: var(--accent-color--lighter);
+    &:hover{
+      background: var(--accent-color);
+    }
+  }
+  &.nav-button{
+    background: transparent;
+    padding: var(--padding-category-button);
+    border-radius: 0;
+    width: max-content;
+    height: fit-content;
+    border: none;
+    box-shadow: none;
+
+    &:hover, &:active{
+      transform:initial;
+    }
+  }
+  &.mobile-menu-button{
+    padding: 10px 50px;
+    background: initial;
+    box-shadow: initial;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-button-group);
+    text-align: left;
+  }
+  & svg{
+    width: var(--icon-size);
+    height: var(--icon-size);
+    max-width: var(--icon-size);
+  }
+
+}
+
+.tool-bar .transparent{
+  padding: 0;
+}

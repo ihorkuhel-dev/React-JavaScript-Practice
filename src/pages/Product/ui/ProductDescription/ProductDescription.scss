@@ -1,0 +1,17 @@
+.category-block{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+  & .category{
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-m);
+    & .category-description{
+      padding: var(--padding-card-large);
+      border-radius: var(--border-radius-l);
+      background: var(--background-color);
+    }
+  }
+}
+

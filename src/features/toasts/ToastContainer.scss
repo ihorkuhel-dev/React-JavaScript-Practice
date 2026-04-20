@@ -1,0 +1,10 @@
+.ToastContainer{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  gap: var(--gap-xs);
+  top: 20px;
+  right: 50%;
+  transform: translateX(50%);
+}

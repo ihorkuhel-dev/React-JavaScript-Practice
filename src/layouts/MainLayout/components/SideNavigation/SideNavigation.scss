@@ -1,0 +1,30 @@
+.side-navigation{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  padding: var(--padding-side-nav);
+  flex-shrink: 0;
+  &.navigation-panel{
+    background: var(--accent-color);
+    border-radius: 0 var(--border-radius-l) var(--border-radius-l) 0;
+    & .nav-button{
+      border-left: 4px solid var(--accent-color);
+      transition: 0.3s ease;
+      background-color: transparent;
+      &:hover{
+        background-color: var(--accent-color--light);
+        border-color: var(--accent-color--darker);
+      }
+    }
+  }
+  &.user-panel{
+    border-radius: var(--border-radius-l) 0 0 var(--border-radius-l);
+    box-shadow: var(--aside-nav-box-shadow);
+  }
+  & .nav-button, & li, & button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

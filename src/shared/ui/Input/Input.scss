@@ -1,0 +1,78 @@
+.input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    background: var(--background-color--accent);
+    border: 2px solid var(--stroke-color);
+    border-radius: var(--border-radius-m);
+    padding: var(--padding-input);
+    color: var(--text-color);
+    font-size: var(--font-size--p);
+    font-weight: 400;
+    transition: all 0.3s ease;
+    width: 100%;
+    outline: none;
+
+    &[type="password"] {
+      padding-right: 50px;
+    }
+
+    &:focus,
+    &.has-value {
+      border-color: var(--accent-color);
+      box-shadow: var(--input-box-shadow);
+
+      + label {
+        transform: translateY(-36px) translateX(-12px) scale(0.85);
+        color: var(--accent-color);
+        font-weight: 600;
+        padding: 0 8px;
+      }
+    }
+
+    &:focus ~ .input-border {
+      width: 100%;
+    }
+    &.edit{
+      font-size: var(--font-size--text);
+      padding: 0;
+      background: transparent;
+      font-weight: initial;
+      border-radius: 2px;
+      &.table-cell{
+        padding:var(--padding-table-cell);
+
+      }
+    }
+  }
+
+  &.error-wrapper {
+    input{
+      border-color: var(--red);
+      box-shadow: var(--error-box-shadow);
+      &:focus, &.has-value { border-color: var(--red);
+        box-shadow: var(--error-box-shadow);
+      }
+      & + label { color: var(--red); }
+    }
+  }
+
+  label {
+    position: absolute;
+    inset: 20px;
+    color: var(--text-color--light);
+    font-size: var(--font-size--text);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    transform-origin: left top;
+  }
+
+}
+.input-error {
+  padding: 10px 0 0 10px;
+  color: var(--red);
+  font-size: var(--font-size--text);
+}

@@ -1,0 +1,168 @@
+:root {
+    --accent-color: #8f6afe;
+    --accent-color--dark: #616CCC;
+    --accent-color--darker: #545EBA;
+    --accent-color--light: #959DE8;
+    --accent-color--lighter: #A7A7FB;
+
+    --background-color: #f5f4f8;
+    --background-color--accent: #ffffff;
+    --select-background-color--hover: #e8e8e8;
+
+    --text-color: #353535;
+    --text-color--light: #979797;
+    --text-color--white: #ffffff;
+    --stroke-color: #D9D9D9;
+
+    --green: #45B73B;
+    --blue: #263ED4;
+    --red: #c63031;
+
+    --button-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+    --circle-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    --aside-nav-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    --input-box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    --submit-button-box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    --error-box-shadow: 0 4px 12px rgba(198, 48, 49, 0.3);
+
+    --font-size--text: 16px;
+    --font-size--p: 20px;
+    --font-size--sub-categories: 22px;
+    --font-size--categories: 24px;
+    --font-size--page-title: 34px;
+    --font-size--stats: 40px;
+
+    --icon-size: 30px;
+    --select-arrow-size: 8px;
+    --password-toogle-size: 18px;
+
+    --gap-side-nav: 15px;
+    --gap-info-card: 30px;
+    --gap-header-page: 20px;
+    --gap-button-group: 15px;
+
+    --gap-xs: 10px;
+    --gap-s: 15px;
+    --gap-m: 20px;
+    --gap-xl: 40px;
+
+    --gap-dashboard: 20px;
+    --gap-dashboard-block: 32px;
+    --gap-dashboard-control: 66px;
+    --gap-dashboard-controls: 24px;
+
+    --border-radius-s: 4px;
+    --border-radius-m: 8px;
+    --border-radius-l: 10px;
+    --border-radius-xl: 15px;
+
+    --padding-side-nav: 50px 0;
+    --padding-side-nav-items: 15px 35px;
+
+    --padding-card-large: 30px;
+    --padding-card: 20px;
+    --padding-card-small: 10px;
+    --padding-info-card-stroke: 10px 0;
+
+    --padding-block-header: 15px;
+
+    --padding-button-small: 10px;
+    --padding-button-medium: 15px;
+    --padding-button: 16px 24px;
+
+    --padding-category-button: 10px 30px;
+    --padding-table-cell: 10px 20px;
+
+    --padding-page-header: 45px 20px 20px 20px;
+
+    --padding-dashboard-block: 20px;
+    --padding-dashboard-block-large: 32px;
+
+    --padding-input: 10px 15px;
+}
+
+@media (max-width: 1300px) {
+    :root {
+        --font-size--page-title: 30px;
+        --font-size--stats: 36px;
+        
+        --gap-xl: 36px;
+        --gap-dashboard-control: 56px;
+        
+        --padding-side-nav: 40px 0;
+        --padding-side-nav-items: 15px 25px;
+        --padding-card-large: 26px;
+        --padding-dashboard-block-large: 26px;
+        --padding-page-header: 35px 20px 15px 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --font-size--p: 18px;
+        --font-size--sub-categories: 20px;
+        --font-size--categories: 22px;
+        --font-size--page-title: 26px;
+        --font-size--stats: 30px;
+
+        --gap-info-card: 24px;
+        --gap-dashboard-block: 26px;
+        --gap-dashboard-control: 40px;
+        --gap-xl: 30px;
+
+        --padding-side-nav: 30px 0;
+        --padding-side-nav-items: 12px 20px;
+        --padding-card-large: 20px;
+        --padding-page-header: 25px 15px 15px 15px;
+        --padding-dashboard-block-large: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --font-size--text: 14px;
+        --font-size--p: 16px;
+        --font-size--sub-categories: 18px;
+        --font-size--categories: 20px;
+        --font-size--page-title: 22px;
+        --font-size--stats: 24px;
+
+        --gap-m: 16px;
+        --gap-xl: 20px;
+        --gap-info-card: 20px;
+        --gap-dashboard: 16px;
+        --gap-dashboard-block: 20px;
+        --gap-dashboard-control: 24px;
+        --gap-dashboard-controls: 16px;
+        --gap-header-page: 16px;
+
+        --padding-side-nav: 20px 0;
+        --padding-side-nav-items: 10px 16px;
+        --padding-card-large: 16px;
+        --padding-card: 16px;
+        --padding-page-header: 20px 10px 10px 10px;
+        --padding-dashboard-block: 16px;
+        --padding-dashboard-block-large: 16px;
+        --padding-button: 12px 20px;
+        --padding-table-cell: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size--page-title: 20px;
+        --font-size--stats: 20px;
+
+        --gap-info-card: 15px;
+        --gap-dashboard-control: 16px;
+        --gap-dashboard-block: 16px;
+
+        --padding-card-large: 12px;
+        --padding-card: 12px;
+        --padding-page-header: 15px 10px 10px 10px;
+        --padding-dashboard-block: 12px;
+        --padding-dashboard-block-large: 12px;
+        --padding-button: 10px 16px;
+    }
+}
+

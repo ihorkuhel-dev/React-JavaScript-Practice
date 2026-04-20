@@ -1,0 +1,14 @@
+.block-header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--accent-color);
+  color: var(--text-color--white);
+  font-size: var(--font-size--page-title);
+  padding: var(--padding-card);
+  border-radius: var(--border-radius-l);
+  gap: var(--gap-header-page);
+  &.review-header{
+    background-color: var(--accent-color--lighter);
+  }
+}

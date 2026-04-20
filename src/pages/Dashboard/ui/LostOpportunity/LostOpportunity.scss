@@ -1,0 +1,23 @@
+.lost-opportunity-chart{
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  & .lost-opportunity-text{
+    position: absolute;
+    inset: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: max-content;
+    & span{
+      display: block;
+      text-align: center;
+      color: var(--text-color--light);
+      font-size: var(--font-size--categories);
+    }
+    & .value{
+      color: var(--text-color);
+      font-size: var(--font-size--stats);
+    }
+  }
+}

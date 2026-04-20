@@ -1,0 +1,29 @@
+.overflow-x-wrap{
+  overflow-x: auto;
+}
+
+.table-client{
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  color: var(--text-color);
+  font-size: var(--font-size--p);
+  border-collapse: collapse;
+
+  & th, & td{
+    border: 1px solid var(--accent-color--lighter);
+    padding: var(--padding-table-cell);
+    height: 52px;
+  }
+
+  & td.editing-cell {
+    padding: 0;
+  }
+}
+
+.table-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-xs);
+  margin-top: var(--gap-xs);
+}

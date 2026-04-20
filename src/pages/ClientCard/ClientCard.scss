@@ -1,0 +1,30 @@
+.client-page{
+  gap: var(--gap-xl);
+  & .client-information{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: var(--gap-xl);
+  }
+  .client-details{
+    background: var(--text-color--white);
+    & .client-table-container{
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      gap: var(--gap-m);
+      padding: 0 var(--padding-card) var(--padding-card) var(--padding-card);
+
+    }
+  }
+}
+@media screen and (max-width: 1300px) {
+  .client-page {
+    gap: var(--gap-m);
+     & .client-information{
+      flex-direction: column;
+      gap: var(--gap-m);
+    }
+  }
+
+}

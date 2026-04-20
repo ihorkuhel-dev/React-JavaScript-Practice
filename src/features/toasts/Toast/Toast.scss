@@ -1,0 +1,64 @@
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-width: 350px;
+  padding:  var(--padding-block-header);
+  background-color: var(--background-color--accent);
+  border-radius: var(--border-radius-s);
+  box-shadow: var(--button-box-shadow);
+  font-size: var(--font-size--text);
+  color: var(--text-color);
+  animation: fadeIn 0.3s ease-out forwards;
+  overflow: hidden;
+  &.closing {
+    animation: fadeOut 0.3s ease-in forwards;
+  }
+  & .toast-progress{
+    margin: 0;
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--green);
+    transition: width 2s;
+    &.active{
+      width: 100%;
+    }
+  }
+  &.toast-info .toast-progress{
+    background-color: var(--blue);
+  }
+}
+
+.toast-close-btn {
+  cursor: pointer;
+  color: var(--text-color--light);
+  margin-left: 10px;
+  &:hover{
+    color: var(--text-color);
+  }
+}
+@keyframes fadeIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
