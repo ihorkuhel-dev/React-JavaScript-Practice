@@ -56,3 +56,14 @@ To create an optimized production build in the `dist` folder:
 ```bash
 npm run build
 ```
+Once built, the application will be available in your browser at `http://localhost:3000/` (or the port provided by Vite).
+
+
+## Project Structure (FSD)
+The project follows this layer structure:
+- `app/` — Application initialization, global styles (`global.css`), router, and context providers.
+- `pages/` — Compositional components for full pages.
+- `routes/` — Implementation of FBS Tanstack Router.
+- `widgets/` — Independent and complete UI blocks (e.g., Header, Sidebar, Chat).
+- `features/` — Business logic and use cases (e.g., authentication, cart/medication API).
+- `shared/` — Reusable code: UI kit (Shadcn), utilities, hooks, assets, and base API configurations.
